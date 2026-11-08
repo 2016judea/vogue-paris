@@ -347,6 +347,10 @@
       }, { rootMargin: '-48% 0px -48% 0px' });
       pageEls.forEach(function (el) { io.observe(el); });
       setCounter(1);
+      // The counter would sit on the closing text, so it steps out once the end is in view.
+      new IntersectionObserver(function (e) {
+        document.getElementById('counter').style.opacity = e[0].isIntersecting ? '0' : '';
+      }).observe(colophon);
     }
 
     /* ── sheet ──────────────────────────────────────────────────────────── */

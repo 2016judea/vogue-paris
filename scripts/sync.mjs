@@ -40,9 +40,13 @@ for (const it of seed) {
     const n = +f.slice(1, 4);
     if (/plat|garde|dos|reliure/i.test(labels[n - 1] || '')) return true;
     const { data } = await sharp(path.join(dir, f)).resize(64, 80, { fit: 'fill' }).greyscale().raw().toBuffer({ resolveWithObject: true });
-    let s = 0, s2 = 0, hi = 0;
-    for (const v of data) { s += v; s2 += v * v; if (v > 200) hi++; }
-    const mean = s / data.length, sd = Math.sqrt(s2 / data.length - mean * mean), frac = hi / data.length;
+    // Judge the middle of the leaf only: a blank endpaper photographed with the
+    // dark binding strip at its edge otherwise reads as a busy page (01 juillet 1920).
+    let s = 0, s2 = 0, hi = 0, c = 0;
+    for (let y = 12; y < 68; y++) for (let x = 10; x < 54; x++) {
+      const v = data[y * 64 + x]; s += v; s2 += v * v; if (v > 200) hi++; c++;
+    }
+    const mean = s / c, sd = Math.sqrt(s2 / c - mean * mean), frac = hi / c;
     return sd < 14 || (frac < 0.25 && sd < 30);
   };
   let a = 0, z = all.length - 1;
