@@ -7,7 +7,7 @@
 const p=require('puppeteer-core'),fs=require('fs'),path=require('path');
 const [port,issuesPath,outdir]=process.argv.slice(2);
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const WIDTH=1600, GAP=+(process.env.GAP||900);
+const WIDTH=+(process.env.WIDTH||2400), GAP=+(process.env.GAP||900);
 (async()=>{
  const b=await p.connect({browserURL:'http://localhost:'+port,protocolTimeout:120000});
  const pg=(await b.pages()).find(x=>x.url().includes('gallica'));

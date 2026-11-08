@@ -321,7 +321,7 @@
     var pageEls = [];
     function buildReel(it) {
       var total = it.last - it.first + 1;
-      var w = 800, h = Math.round(800 / it.ar);
+      var w = it.tiers[0][1], h = Math.round(w / it.ar);
       var SIZES = '(min-width: 1000px) min(1600px, calc(100vw - 238px), max(640px, calc((100vh - 54px) * ' + it.ar + '))), 100vw';
       for (var n = it.first; n <= it.last; n++) {
         var el = document.createElement('div');
@@ -330,8 +330,8 @@
         var img = document.createElement('img');
         img.width = w; img.height = h;
         var u = it.base + '/vogue/' + it.ark;
-        img.src = u + '/w800/p' + p3(n) + '.webp';
-        img.srcset = u + '/w800/p' + p3(n) + '.webp 800w, ' + u + '/w1600/p' + p3(n) + '.webp 1600w';
+        img.src = u + '/' + it.tiers[0][0] + '/p' + p3(n) + '.webp';
+        img.srcset = it.tiers.map(function (t) { return u + '/' + t[0] + '/p' + p3(n) + '.webp ' + t[1] + 'w'; }).join(', ');
         img.sizes = SIZES;
         img.alt = 'Vogue Paris, ' + it.label + ', page ' + (n - it.first + 1);
         img.decoding = 'async';

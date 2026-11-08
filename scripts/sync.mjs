@@ -3,8 +3,8 @@
 // after the mirror marks it DONE, and recorded in data/uploaded.json.
 //
 // Two tiers per page, so a phone never pulls the desktop file:
-//   w800  — phone and narrow windows
-//   w1600 — desktop and retina (the mirror's own resolution)
+//   w1200 — phone and laptop
+//   w2400 — desktop retina and pinch-zoom (the mirror's own resolution)
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -14,11 +14,12 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 for (const line of fs.readFileSync(path.join(ROOT, '.env.local'), 'utf8').split('\n')) {
   const m = line.match(/^(\w+)=(.*)$/); if (m) process.env[m[1]] = m[2];
 }
-const MIRROR = path.join(ROOT, 'mirror');
+const MIRROR = path.join(ROOT, 'mirror-hi');  // 2400px copies (was mirror/ at 1600px)
 const seed = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/issues_seed.json')));
 const upPath = path.join(ROOT, 'data/uploaded.json');
 const uploaded = fs.existsSync(upPath) ? JSON.parse(fs.readFileSync(upPath)) : {};
-const TIERS = [['w800', 800, 70], ['w1600', 1600, 74]];
+// w1200: phones (390 css px at 3x) and small laptops; w2400: desktop retina and pinch-zoom.
+const TIERS = [['w1200', 1200, 74], ['w2400', 2400, 78]];
 const pad = n => String(n).padStart(3, '0');
 
 async function pool(items, n, fn) {
@@ -28,7 +29,7 @@ async function pool(items, n, fn) {
 
 for (const it of seed) {
   const dir = path.join(MIRROR, it.ark);
-  if (uploaded[it.ark] || !fs.existsSync(path.join(dir, 'DONE'))) continue;
+  if (uploaded[it.ark]?.hi || !fs.existsSync(path.join(dir, 'DONE'))) continue;
   const all = fs.readdirSync(dir).filter(f => /^p\d{3}\.jpg$/.test(f)).sort();
   const labels = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'))).pages.map(p => String(p.label || ''));
   // Bound volumes open on the binding board, marbled endpapers and blank leaves
@@ -68,7 +69,7 @@ for (const it of seed) {
     }
   });
   const nums = files.map(f => +f.slice(1, 4));
-  uploaded[it.ark] = { base, first: Math.min(...nums), last: Math.max(...nums), w, h };
+  uploaded[it.ark] = { base, first: Math.min(...nums), last: Math.max(...nums), w, h, hi: true, tiers: TIERS.map(t => [t[0], t[1]]) };
   fs.writeFileSync(upPath, JSON.stringify(uploaded, null, 1));
   console.log('uploaded', it.date, it.ark, files.length, 'pages');
 }
@@ -76,7 +77,7 @@ for (const it of seed) {
 const out = seed.map(it => {
   const u = uploaded[it.ark];
   return u
-    ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4) }
+    ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4), tiers: u.tiers || [['w800', 800], ['w1600', 1600]] }
     : { ...it, ready: false };
 });
 fs.mkdirSync(path.join(ROOT, 'public/data'), { recursive: true });
