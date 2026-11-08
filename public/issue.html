@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <title>Vogue Paris</title>
+  <meta name="theme-color" content="#111013" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+  <style>
+    /* Ported from the GLEAN reader (readglean.com/issue-02): one long reel of
+       full pages, a contents rail on desktop, a contents sheet on phone, a page
+       counter, and a bar that steps aside while you read down. Differences: the
+       rail lists the year's issues (a Vogue issue has no table of contents we can
+       read), the pages come from Vercel Blob, and the accent is a Lepape rose. */
+    :root {
+      --bg: #111013; --bg-soft: #1a181d; --ink: #e9e4db;
+      --ink-dim: #a9a29a; --ink-faint: #8b857b;
+      --accent: #d9577f; --accent-ink: #e46b91;
+      --line: rgba(233, 228, 219, 0.13); --line-soft: rgba(233, 228, 219, 0.07);
+      --rail: 238px;
+      --read: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --bar: 54px;
+      --safe-t: env(safe-area-inset-top, 0px);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+      --ar: 0.75;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%; background: var(--bg); color: var(--ink);
+      font-family: 'Geist Mono', monospace;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      overscroll-behavior: none;
+    }
+    html { scroll-snap-type: y proximity; scroll-behavior: smooth; scroll-padding-top: calc(var(--bar) + var(--safe-t)); }
+    body { overflow-x: hidden; }
+    a { color: inherit; }
+
+    .reel { display: block; width: 100%; max-width: 1600px; margin: 0 auto; padding-top: calc(var(--bar) + var(--safe-t)); }
+    @media (min-width: 1000px) {
+      .reel { max-width: max(640px, min(1600px, calc((100vh - var(--bar) - var(--safe-t)) * var(--ar)))); }
+    }
+    .page { display: block; scroll-snap-align: start; }
+    .page img { display: block; width: 100%; height: auto; background: var(--bg-soft); }
+    .page img, .rl, .bar, .sheet, .counter { touch-action: pan-x pan-y pinch-zoom; }
+
+    /* ── contents rail · desktop ─────────────────────────────────────────── */
+    .rail { display: none; }
+    @media (min-width: 1000px) {
+      body { padding-left: var(--rail); }
+      .rail {
+        position: fixed; left: 0; top: 0; bottom: 0; width: var(--rail); z-index: 20;
+        display: flex; flex-direction: column;
+        padding: calc(var(--bar) + var(--safe-t) + 20px) 0 calc(52px + var(--safe-b)) 26px;
+        border-right: 0.5px solid var(--line-soft);
+        overflow-y: auto; overscroll-behavior: contain;
+      }
+    }
+    .rail-h {
+      display: flex; justify-content: space-between; align-items: baseline; padding-right: 20px;
+      font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 18px; flex: none;
+    }
+    .rail-h a { text-decoration: none; color: var(--ink-faint); padding: 4px 0; }
+    .rail-h a:hover { color: var(--accent-ink); }
+    .rail-h a[aria-disabled="true"] { visibility: hidden; }
+    .rl {
+      display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px;
+      align-items: center; text-align: left; flex: none; text-decoration: none;
+      padding: 10px 20px 11px 0; background: none; border: none;
+      border-top: 0.5px solid var(--line-soft); cursor: pointer;
+      font-family: 'Geist Mono', monospace; color: var(--ink-faint);
+      transition: color 0.2s; -webkit-tap-highlight-color: transparent;
+    }
+    .rl:first-of-type { border-top: none; }
+    .rl:hover { color: var(--ink-dim); }
+    .rl:focus-visible { outline: 1.5px solid var(--accent-ink); outline-offset: -2px; }
+    .rl img { width: 34px; aspect-ratio: 3 / 4; object-fit: cover; display: block; opacity: 0.7; transition: opacity 0.2s; }
+    .rl:hover img, .rl.on img { opacity: 1; }
+    .rl .kick { display: block; font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+    .rl .ttl { font-family: var(--read); font-size: 13.5px; line-height: 1.32; }
+    .rl.on { color: var(--ink); }
+    .rl.on .kick { color: var(--accent-ink); }
+
+    /* ── contents sheet · phone ──────────────────────────────────────────── */
+    .contents-toggle { display: none; }
+    @media (max-width: 999px) { .contents-toggle { display: block; } }
+    .sheet-scrim {
+      position: fixed; inset: 0; z-index: 24;
+      background: rgba(11, 10, 12, 0.62); backdrop-filter: blur(2px);
+      opacity: 0; pointer-events: none; transition: opacity 0.28s;
+    }
+    .sheet {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+      height: min(74svh, 620px); display: flex; flex-direction: column;
+      background: #16151a; border-top: 0.5px solid var(--line);
+      border-radius: 14px 14px 0 0; box-shadow: 0 -18px 46px rgba(0, 0, 0, 0.7);
+      transform: translateY(101%);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      padding-bottom: var(--safe-b);
+    }
+    body.sheet-open .sheet { transform: none; }
+    body.sheet-open .sheet-scrim { opacity: 1; pointer-events: auto; }
+    body.sheet-open .counter { opacity: 0; }
+    html.sheet-lock body { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden; }
+    .sheet-grip { flex: none; display: flex; justify-content: center; padding: 10px 0 4px; }
+    .sheet-grip span { width: 34px; height: 3px; border-radius: 999px; background: rgba(233, 228, 219, 0.2); }
+    .sheet-h { flex: none; padding: 8px 20px 12px; }
+    .sheet-h.rail-h { margin: 0; }
+    .sheet-list { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 0 20px 22px; }
+    .sheet-list .rl { grid-template-columns: 44px minmax(0, 1fr); padding: 13px 0 14px; min-height: 44px; }
+    .sheet-list .rl img { width: 44px; }
+    .sheet-list .rl .ttl { font-size: 14.5px; }
+    @media (prefers-reduced-motion: reduce) { .sheet, .sheet-scrim { transition: none; } }
+
+    /* ── counter ─────────────────────────────────────────────────────────── */
+    .counter {
+      position: fixed; left: 0; right: 0; bottom: calc(15px + var(--safe-b)); z-index: 6;
+      text-align: center; pointer-events: none; transition: opacity 0.4s;
+    }
+    .counter .chip {
+      display: inline-block; padding: 7px 15px; border-radius: 999px;
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink);
+      background: rgba(17, 16, 19, 0.78); backdrop-filter: blur(10px);
+      border: 0.5px solid rgba(233, 228, 219, 0.14); font-variant-numeric: tabular-nums;
+    }
+    .counter .of { opacity: 0.45; }
+    @media (min-width: 1000px) { .counter { left: var(--rail); } }
+
+    /* ── bar ─────────────────────────────────────────────────────────────── */
+    .bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 36;
+      height: calc(var(--bar) + var(--safe-t) + 14px); padding: var(--safe-t) 22px 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      background: linear-gradient(to bottom, rgba(17, 16, 19, 0.94) 58%, rgba(17, 16, 19, 0));
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    body.bar-hidden .bar { transform: translateY(-100%); opacity: 0; }
+    body.bar-hidden .counter { opacity: 0; }
+    .mast {
+      font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 21px;
+      line-height: 1; letter-spacing: 0.08em; text-decoration: none; color: var(--ink);
+      opacity: 0.8; transition: opacity 0.25s; white-space: nowrap;
+    }
+    .mast:hover { opacity: 1; }
+    .mast i { font-weight: 500; letter-spacing: 0.01em; color: var(--accent); }
+    .mast .tag {
+      font-family: 'Geist Mono', monospace; font-size: 9px; font-weight: 400;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-dim);
+      margin-left: 12px; vertical-align: 2px;
+    }
+    .menu { display: flex; align-items: center; gap: 22px; }
+    .menu a, .menu button {
+      font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink-dim); text-decoration: none;
+      background: none; border: none; cursor: pointer; padding: 8px 0;
+      transition: color 0.22s; -webkit-tap-highlight-color: transparent;
+    }
+    .menu a:hover, .menu a:focus-visible, .menu button:hover { color: var(--accent); outline: none; }
+    .menu button.on { color: var(--accent-ink); }
+    .menu a[aria-disabled="true"] { opacity: 0.3; pointer-events: none; }
+    .menu-toggle { display: none; }
+    @media (max-width: 700px) {
+      .bar { padding-left: 16px; padding-right: 16px; }
+      .mast { font-size: 19px; }
+      .mast .tag { display: none; }
+      .menu-toggle { display: block; }
+      .menu-items {
+        position: absolute; top: calc(var(--bar) + var(--safe-t) - 6px); right: 16px;
+        display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+        padding: 12px 16px; border: 0.5px solid var(--line); border-radius: 10px;
+        background: #16151a; box-shadow: 0 18px 46px rgba(0, 0, 0, 0.7);
+        opacity: 0; transform: translateY(-6px); pointer-events: none;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+      body.menu-open .menu-items { opacity: 1; transform: none; pointer-events: auto; }
+      .menu-items a { font-size: 11px; padding: 9px 0; }
+    }
+    @media (min-width: 701px) { .menu-items { display: flex; align-items: center; gap: 22px; } }
+
+    /* ── colophon / pending ──────────────────────────────────────────────── */
+    .colophon { width: 100%; max-width: 520px; margin: 0 auto; text-align: center; padding: 78px 26px calc(88px + var(--safe-b)); }
+    .colophon-rule { width: 40px; height: 1px; background: var(--line); margin: 0 auto 36px; }
+    .colophon-mast { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: 0.08em; }
+    .colophon-sub { font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-size: 15px; color: var(--ink-dim); margin-top: 9px; }
+    .colophon-tag { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-dim); margin-top: 24px; }
+    .colophon-links { display: flex; flex-direction: column; gap: 10px; align-items: center; margin-top: 36px; }
+    .colophon-links a {
+      display: block; width: 100%; max-width: 300px; padding: 13px 20px;
+      border: 0.5px solid var(--line); border-radius: 8px; text-decoration: none;
+      font-size: 12px; letter-spacing: 0.05em; color: var(--ink);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .colophon-links a:hover { border-color: var(--accent); color: var(--accent); }
+    .colophon-foot { margin-top: 36px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-dim); line-height: 1.8; }
+    .pending { max-width: 520px; margin: 0 auto; padding: 28px 26px 0; text-align: center; }
+    .pending img { width: min(100%, 360px); height: auto; display: block; margin: 0 auto 26px; box-shadow: 0 18px 46px rgba(0,0,0,.6); }
+    .pending p { font-family: var(--read); font-size: 16px; line-height: 1.6; color: var(--ink-dim); }
+    @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } html { scroll-behavior: auto; } }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <nav class="rail" id="rail" aria-label="Issues this year">
+    <div class="rail-h"><a id="railPrevY" href="#">&larr;</a><span id="railYear"></span><a id="railNextY" href="#">&rarr;</a></div>
+  </nav>
+
+  <main class="reel" id="reel">
+    <footer class="colophon" id="colophon">
+      <div class="colophon-rule"></div>
+      <div class="colophon-mast">VOGUE</div>
+      <div class="colophon-sub">Édition française</div>
+      <div class="colophon-tag" id="endTag"></div>
+      <div class="colophon-links">
+        <a id="endNext" href="/">Next issue</a>
+        <a href="/">All issues</a>
+        <a id="endGallica" href="#" target="_blank" rel="noopener">This issue on Gallica</a>
+      </div>
+      <div class="colophon-foot">Source: gallica.bnf.fr / Bibliothèque nationale de France</div>
+    </footer>
+  </main>
+
+  <div class="counter" id="counter"><span class="chip"></span></div>
+
+  <header class="bar" id="bar">
+    <a class="mast" href="/" aria-label="All issues">VOGUE <i>Paris</i><span class="tag" id="mastTag"></span></a>
+    <nav class="menu">
+      <button class="contents-toggle" id="contentsToggle" aria-expanded="false" aria-controls="sheet">Issues</button>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuItems">Menu</button>
+      <div class="menu-items" id="menuItems">
+        <a id="prevIssue" href="#">&larr; Prev</a>
+        <a id="nextIssue" href="#">Next &rarr;</a>
+        <a href="/">All issues</a>
+        <a id="gallica" href="#" target="_blank" rel="noopener">Gallica</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="sheet-scrim" id="sheetScrim"></div>
+  <div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-label="Issues this year">
+    <div class="sheet-grip"><span></span></div>
+    <div class="sheet-h rail-h"><a id="sheetPrevY" href="#">&larr;</a><span id="sheetYear"></span><a id="sheetNextY" href="#">&rarr;</a></div>
+    <div class="sheet-list" id="sheetList"></div>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+    var TOUCH = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    var ark = (location.pathname.match(/\/issue\/([a-z0-9]+)/) || [])[1] || new URLSearchParams(location.search).get('ark');
+    var reel = document.getElementById('reel'), colophon = document.getElementById('colophon');
+    var counterChip = document.querySelector('.counter .chip');
+    var body = document.body;
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function p3(n) { return String(n).padStart(3, '0'); }
+    function short(l) { return l.replace(/\s\d{4}$/, ''); }
+
+    fetch('/data/issues.json').then(function (r) { return r.json(); }).then(function (all) {
+      var i = all.findIndex(function (x) { return x.ark === ark; });
+      if (i < 0) { location.replace('/'); return; }
+      var it = all[i], prev = all[i - 1], next = all[i + 1];
+      var gallicaUrl = 'https://gallica.bnf.fr/ark:/12148/' + it.ark + '/f' + it.start + '.item';
+      document.title = 'Vogue Paris · ' + it.label;
+      document.getElementById('mastTag').textContent = it.label;
+      document.getElementById('endTag').textContent = 'End of ' + it.label;
+      document.getElementById('gallica').href = gallicaUrl;
+      document.getElementById('endGallica').href = gallicaUrl;
+      function link(id, x, txt) {
+        var a = document.getElementById(id);
+        if (x) { a.href = '/issue/' + x.ark; if (txt) a.textContent = txt; }
+        else { a.setAttribute('aria-disabled', 'true'); a.removeAttribute('href'); }
+      }
+      link('prevIssue', prev); link('nextIssue', next);
+      link('endNext', next, next ? 'Next issue · ' + next.label : '');
+      if (!next) document.getElementById('endNext').style.display = 'none';
+
+      buildIssues(all, it);
+      if (it.ar) document.documentElement.style.setProperty('--ar', it.ar);
+      if (it.ready) buildReel(it); else buildPending(it, gallicaUrl);
+    });
+
+    /* ── the year's issues: rail on desktop, sheet on phone ─────────────── */
+    function buildIssues(all, it) {
+      var years = Array.from(new Set(all.map(function (x) { return x.year; })));
+      var yi = years.indexOf(it.year);
+      function yearLink(id, y) {
+        var a = document.getElementById(id);
+        if (y == null) { a.setAttribute('aria-disabled', 'true'); return; }
+        var first = all.filter(function (x) { return x.year === y; })[0];
+        a.href = '/issue/' + first.ark; a.title = String(y);
+      }
+      ['rail', 'sheet'].forEach(function (k) {
+        document.getElementById(k + 'Year').textContent = it.year + ' · Issues';
+        yearLink(k + 'PrevY', years[yi - 1]); yearLink(k + 'NextY', years[yi + 1]);
+      });
+      var rail = document.getElementById('rail'), list = document.getElementById('sheetList');
+      all.filter(function (x) { return x.year === it.year; }).forEach(function (x) {
+        [rail, list].forEach(function (host) {
+          var a = document.createElement('a');
+          a.className = 'rl' + (x.ark === it.ark ? ' on' : '');
+          a.href = '/issue/' + x.ark;
+          a.innerHTML = '<img src="/covers/' + x.ark + '.webp" alt="" loading="lazy"><span><span class="kick">' +
+            (x.ark === it.ark ? 'Reading' : x.ready ? 'Issue' : 'Copying') + '</span><span class="ttl">' + short(x.label) + '</span></span>';
+          host.appendChild(a);
+        });
+      });
+      var on = rail.querySelector('.rl.on'); if (on) on.scrollIntoView({ block: 'nearest' });
+    }
+
+    function buildPending(it, gallicaUrl) {
+      var d = document.createElement('div');
+      d.className = 'pending';
+      d.innerHTML = '<img src="/covers/' + it.ark + '.webp" alt="Cover, ' + it.label + '"><p>This issue is still being copied from Gallica and will be readable here soon. Until then you can <a href="' + gallicaUrl + '" target="_blank" rel="noopener">read it on Gallica</a>.</p>';
+      reel.insertBefore(d, colophon);
+      counterChip.parentNode.style.display = 'none';
+    }
+
+    var pageEls = [];
+    function buildReel(it) {
+      var total = it.last - it.first + 1;
+      var w = 800, h = Math.round(800 / it.ar);
+      var SIZES = '(min-width: 1000px) min(1600px, calc(100vw - 238px), max(640px, calc((100vh - 54px) * ' + it.ar + '))), 100vw';
+      for (var n = it.first; n <= it.last; n++) {
+        var el = document.createElement('div');
+        el.className = 'page';
+        el.setAttribute('data-page', n - it.first + 1);
+        var img = document.createElement('img');
+        img.width = w; img.height = h;
+        var u = it.base + '/vogue/' + it.ark;
+        img.src = u + '/w800/p' + p3(n) + '.webp';
+        img.srcset = u + '/w800/p' + p3(n) + '.webp 800w, ' + u + '/w1600/p' + p3(n) + '.webp 1600w';
+        img.sizes = SIZES;
+        img.alt = 'Vogue Paris, ' + it.label + ', page ' + (n - it.first + 1);
+        img.decoding = 'async';
+        if (n > it.first + 1) img.loading = 'lazy';
+        img.addEventListener('click', function () { if (TOUCH) toggleBar(); });
+        el.appendChild(img);
+        reel.insertBefore(el, colophon);
+        pageEls.push(el);
+      }
+      function setCounter(k) { counterChip.innerHTML = pad(k) + ' <span class="of">/ ' + total + '</span>'; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) setCounter(+e.target.getAttribute('data-page')); });
+      }, { rootMargin: '-48% 0px -48% 0px' });
+      pageEls.forEach(function (el) { io.observe(el); });
+      setCounter(1);
+    }
+
+    /* ── sheet ──────────────────────────────────────────────────────────── */
+    var sheet = document.getElementById('sheet'), sheetScrim = document.getElementById('sheetScrim');
+    var contentsToggle = document.getElementById('contentsToggle'), menuToggle = document.getElementById('menuToggle');
+    function sheetOpen() { return body.classList.contains('sheet-open'); }
+    var lockedY = 0;
+    function setSheet(open) {
+      if (open === sheetOpen()) return;
+      if (open) lockedY = window.scrollY;
+      body.classList.toggle('sheet-open', open);
+      document.documentElement.classList.toggle('sheet-lock', open);
+      body.style.top = open ? (-lockedY + 'px') : '';
+      if (!open) {
+        var prev = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, lockedY);
+        document.documentElement.style.scrollBehavior = prev;
+      }
+      sheet.setAttribute('aria-hidden', open ? 'false' : 'true');
+      contentsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      contentsToggle.classList.toggle('on', open);
+      if (open) {
+        showBar();
+        var lit = sheet.querySelector('.rl.on'); if (lit) lit.scrollIntoView({ block: 'center' });
+      }
+    }
+    contentsToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      body.classList.remove('menu-open'); menuToggle.setAttribute('aria-expanded', 'false');
+      setSheet(!sheetOpen());
+    });
+    sheetScrim.addEventListener('click', function () { setSheet(false); });
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !body.classList.contains('menu-open');
+      body.classList.toggle('menu-open', open);
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) setSheet(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.menu')) { body.classList.remove('menu-open'); menuToggle.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setSheet(false); body.classList.remove('menu-open'); } });
+
+    /* ── the bar steps aside while you read down ────────────────────────── */
+    var lastY = window.scrollY;
+    function showBar() { body.classList.remove('bar-hidden'); lastY = window.scrollY; }
+    function toggleBar() { lastY = window.scrollY; body.classList.toggle('bar-hidden', !body.classList.contains('bar-hidden')); }
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY, d = y - lastY;
+      if (Math.abs(d) < 8) return;
+      lastY = y;
+      body.classList.toggle('bar-hidden', d > 0 && y > 150);
+    }, { passive: true });
+  })();
+  </script>
+</body>
+</html>
