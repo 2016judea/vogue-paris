@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Jost:wght@400;500&display=swap">
 <style>
-/* Layout: a hanging wall. Sticky year rail on top (a to-scale timeline, war gap included), then one row per year, covers hung like prints. */
+/* Layout: a hanging wall. One row per year, covers hung like prints; tap one to read it. */
 :root{
   --wall:#e4e5e8;      /* cool mat board */
   --card:#f4f4f5;
@@ -33,63 +33,24 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 header.mast{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 32px;padding-block:28px 14px}
 h1{font:400 clamp(40px,7vw,76px)/.9 var(--display);letter-spacing:-.01em;margin:0;text-wrap:balance}
 h1 i{color:var(--rose)}
-.sub{color:var(--muted);max-width:52ch;margin:0;font-size:14px}
 
-/* timeline rail */
-.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--wall);border-bottom:1px solid var(--rule);padding-block:10px 8px;
-  margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.rail-in{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
-.ctrls{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ctrls button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--ink);background:none;border:1px solid var(--rule);border-radius:99px;padding:4px 12px;cursor:pointer}
-.ctrls button[aria-pressed="true"]{background:var(--ink);color:var(--wall);border-color:var(--ink)}
-.ctrls .spacer{flex:1}
-.ctrls label{display:flex;gap:8px;align-items:center}
-.ctrls input[type=range]{accent-color:var(--rose);width:110px}
-.tl{overflow-x:auto;scrollbar-width:none}
-.tl::-webkit-scrollbar{display:none}
-.tl-in{display:grid;grid-template-columns:repeat(35,minmax(22px,1fr));gap:2px;min-width:780px;align-items:end}
-.tick{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;font:500 10px/1 var(--body);font-variant-numeric:tabular-nums}
-.tick .bar{width:100%;background:var(--ink);opacity:.8;border-radius:1px;min-height:2px;position:relative}
-.tick .heart{position:absolute;left:0;right:0;bottom:0;background:var(--rose)}
-.tick.gap{cursor:default;color:var(--muted)}
-.tick.gap .bar{background:none;border-top:1px dashed var(--muted);opacity:.6;height:1px!important}
-.tick:not(.gap):hover .bar,.tick:focus-visible .bar{opacity:1;background:var(--rose)}
-.tick:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
 
-/* tally */
-.tally{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding-block:14px 0;font-size:13px;color:var(--muted)}
-.tally b{font:400 13px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
-.tally a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rose);font-variant-numeric:tabular-nums}
 
 /* years */
-section.year{display:grid;grid-template-columns:minmax(90px,140px) 1fr;gap:20px;padding-block:28px;border-bottom:1px solid var(--rule);scroll-margin-top:110px}
-.yh{position:sticky;top:120px;align-self:start;display:flex;flex-direction:column;gap:4px}
+section.year{display:grid;grid-template-columns:minmax(90px,140px) 1fr;gap:20px;padding-block:28px;border-bottom:1px solid var(--rule);scroll-margin-top:16px}
+.yh{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;display:flex;flex-direction:column;gap:4px}
 .yh h2{font:400 clamp(34px,4.5vw,52px)/1 var(--display);margin:0;font-variant-numeric:lining-nums}
 .yh small{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 .yh .era{font:italic 400 14px/1.3 var(--display);color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--w,150px),1fr));gap:22px 16px}
 figure{margin:0;display:flex;flex-direction:column;gap:6px}
-.frame{position:relative;aspect-ratio:240/300;background:var(--card);box-shadow:0 1px 2px rgb(0 0 0/.12),0 6px 18px -8px rgb(0 0 0/.35);cursor:zoom-in;overflow:hidden;border:0;padding:0;display:block;width:100%}
+.frame{position:relative;aspect-ratio:240/300;background:var(--card);box-shadow:0 1px 2px rgb(0 0 0/.12),0 6px 18px -8px rgb(0 0 0/.35);cursor:pointer;overflow:hidden;border:0;padding:0;display:block;width:100%}
 .frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
 .frame:hover img{transform:scale(1.03)}
 .frame:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
 figcaption{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-.fav{background:none;border:0;padding:2px 4px;cursor:pointer;color:var(--muted);font-size:17px;line-height:1}
-.fav[aria-pressed="true"]{color:var(--rose)}
-.fav:focus-visible{outline:2px solid var(--rose);border-radius:3px}
 .hide{display:none!important}
 
-/* lightbox */
-dialog{border:0;padding:0;background:transparent;max-width:min(92vw,560px);width:100%;color:var(--ink)}
-dialog::backdrop{background:rgb(10 10 12/.82)}
-.lb{background:var(--card);padding:14px;display:flex;flex-direction:column;gap:10px}
-.lb img{width:100%;image-rendering:auto;display:block}
-.lb-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px}
-.lb-row h3{font:400 22px/1.1 var(--display);margin:0}
-.lb-row a{color:var(--ink)}
-.lb-btns{display:flex;gap:8px}
-.lb-btns button{font:500 12px var(--body);letter-spacing:.06em;text-transform:uppercase;background:none;color:var(--ink);border:1px solid var(--rule);padding:6px 10px;cursor:pointer}
 footer{padding-block:28px;color:var(--muted);font-size:12px;max-width:70ch}
 footer a{color:inherit}
 @media (max-width:640px){
@@ -98,7 +59,6 @@ footer a{color:inherit}
 }
 @media (prefers-reduced-motion:reduce){.frame img{transition:none}}
 .frame{text-decoration:none}
-.pending{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
 img{max-width:100%}
@@ -114,78 +74,30 @@ img{max-width:100%}
   </header>
 </div>
 
-<div class="rail">
-  <div class="rail-in">
-    <div class="ctrls">
-      <button id="only" type="button" aria-pressed="false">Hearted only</button>
-      <button id="clear" type="button">Clear hearts</button>
-      <span class="spacer"></span>
-      <label for="size">Size <input id="size" type="range" min="100" max="260" value="150"></label>
-    </div>
-    <div class="tl"><div class="tl-in" id="tl"></div></div>
-  </div>
-</div>
 
 <div class="wrap">
-  <div class="tally" id="tally"></div>
   <main id="years"></main>
-  <footer>Covers from Gallica, Bibliothèque nationale de France, title <a href="https://gallica.bnf.fr/ark:/12148/cb343833568/date">Vogue (Paris)</a>, ISSN 0750-3628. Gallica's run stops in 1954 and skips 1941–44, when Condé Nast suspended the French edition under the Occupation. Some years are bound annual volumes, so one cover stands for the year. Hearts are saved in this browser only.</footer>
+  <footer>Covers from Gallica, Bibliothèque nationale de France, title <a href="https://gallica.bnf.fr/ark:/12148/cb343833568/date">Vogue (Paris)</a>, ISSN 0750-3628. Gallica's run stops in 1954 and skips 1941–44, when Condé Nast suspended the French edition under the Occupation. Some years are bound annual volumes, so one cover stands for the year.</footer>
 </div>
 
 
 <script>
-let D=[];
-fetch('/data/issues.json').then(r=>r.json()).then(rows=>{D=rows.map(r=>({y:r.year,l:r.label,a:r.ark,ready:r.ready}));boot();});
-function boot(){
 const ERAS={1920:"Lepape, Dryden, Plank",1925:"Art Deco",1929:"the crash",1934:"Horst, Hoyningen-Huene",1939:"Oct–Nov never printed",1945:"after the Liberation",1947:"the New Look"};
-let favs=new Set();try{favs=new Set(JSON.parse(localStorage.getItem('vp-favs')||'[]'))}catch(e){}
-const save=()=>{try{localStorage.setItem('vp-favs',JSON.stringify([...favs]))}catch(e){}};
-const byYear={};D.forEach((d,i)=>{d.i=i;(byYear[d.y]??=[]).push(d)});
-const years=Object.keys(byYear).map(Number);
-const max=Math.max(...years.map(y=>byYear[y].length));
-const tl=document.getElementById('tl'),main=document.getElementById('years');
-for(let y=1920;y<=1954;y++){
-  const has=byYear[y];const b=document.createElement('button');b.type='button';b.className='tick'+(has?'':' gap');
-  if(has){b.innerHTML=`<span class="bar" style="height:${4+30*has.length/max}px"><span class="heart" id="h${y}"></span></span>${String(y).slice(2)}`;
-    b.title=`${y}: ${has.length} covers`;b.onclick=()=>document.getElementById('y'+y).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
-  else{b.innerHTML=`<span class="bar"></span>${String(y).slice(2)}`;b.disabled=true;b.title=`${y}: none on Gallica`;}
-  tl.appendChild(b);
-}
-for(const y of years){
-  const s=document.createElement('section');s.className='year';s.id='y'+y;
-  const n=byYear[y].length;
-  s.innerHTML=`<div class="yh"><h2>${y}</h2><small>${n} cover${n>1?'s':''}</small>${ERAS[y]?`<span class="era">${ERAS[y]}</span>`:''}</div><div class="grid"></div>`;
-  const g=s.querySelector('.grid');
-  for(const d of byYear[y]){
-    const f=document.createElement('figure');f.dataset.i=d.i;
-    f.innerHTML=`<a class="frame" href="/issue/${d.a}" aria-label="Read ${d.l}"><img loading="lazy" src="/covers/${d.a}.webp" alt="Vogue Paris cover, ${d.l}"></a><figcaption><span>${d.l}</span><button class="fav" type="button" aria-label="Heart ${d.l}" aria-pressed="${favs.has(d.a)}">♥</button></figcaption>`;
-    f.querySelector('.fav').onclick=e=>toggle(d.a);
-    g.appendChild(f);
+fetch('/data/issues.json').then(r=>r.json()).then(rows=>{
+  const byYear={};rows.forEach(r=>(byYear[r.year]??=[]).push(r));
+  const main=document.getElementById('years');
+  for(const y of Object.keys(byYear).map(Number)){
+    const n=byYear[y].length,s=document.createElement('section');s.className='year';s.id='y'+y;
+    s.innerHTML=`<div class="yh"><h2>${y}</h2><small>${n} issue${n>1?'s':''}</small>${ERAS[y]?`<span class="era">${ERAS[y]}</span>`:''}</div><div class="grid"></div>`;
+    const g=s.querySelector('.grid');
+    for(const d of byYear[y]){
+      const f=document.createElement('figure');
+      f.innerHTML=`<a class="frame" href="/issue/${d.ark}" aria-label="Read ${d.label}"><img loading="lazy" src="/covers/${d.ark}.webp" alt="Vogue Paris cover, ${d.label}"></a><figcaption><span>${d.label}</span></figcaption>`;
+      g.appendChild(f);
+    }
+    main.appendChild(s);
   }
-  main.appendChild(s);
-}
-function toggle(a){favs.has(a)?favs.delete(a):favs.add(a);save();render()}
-function render(){
-  document.querySelectorAll('figure').forEach(f=>{const d=D[f.dataset.i];f.querySelector('.fav').setAttribute('aria-pressed',favs.has(d.a))});
-  const only=document.getElementById('only').getAttribute('aria-pressed')==='true';
-  const counts={};
-  for(const y of years){const c=byYear[y].filter(d=>favs.has(d.a)).length;counts[y]=c;
-    document.getElementById('h'+y).style.height=(c/byYear[y].length*100)+'%';
-    const sec=document.getElementById('y'+y);
-    sec.querySelectorAll('figure').forEach(f=>f.classList.toggle('hide',only&&!favs.has(D[f.dataset.i].a)));
-    sec.classList.toggle('hide',only&&!c);}
-  const ranked=years.filter(y=>counts[y]).sort((a,b)=>counts[b]/byYear[b].length-counts[a]/byYear[a].length||counts[b]-counts[a]);
-  const t=document.getElementById('tally');
-  t.innerHTML=ranked.length?`<b>Your years</b>`+ranked.slice(0,8).map(y=>`<a href="#y${y}">${y} · ${counts[y]}/${byYear[y].length}</a>`).join('')
-    :`<b>Your years</b><span>Heart a few covers and your favourite years rank here, by the share of each year you hearted.</span>`;
-  if(lbIdx!=null)document.getElementById('lbfav').setAttribute('aria-pressed',favs.has(D[lbIdx].a));
-}
-document.getElementById('only').onclick=e=>{const b=e.currentTarget;b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');render()};
-document.getElementById('clear').onclick=e=>{const b=e.currentTarget;if(b.dataset.arm){favs.clear();save();render();b.textContent='Clear hearts';delete b.dataset.arm}else{b.dataset.arm=1;b.textContent='Tap again to clear';setTimeout(()=>{b.textContent='Clear hearts';delete b.dataset.arm},2500)}};
-document.getElementById('size').oninput=e=>main.style.setProperty('--w',e.target.value+'px');
-let lbIdx=null;
-render();
-}
+});
 </script>
 </body>
 </html>
