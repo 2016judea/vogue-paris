@@ -74,7 +74,8 @@ for (const it of seed) {
   console.log('uploaded', it.date, it.ark, files.length, 'pages');
 }
 
-const out = seed.map(it => {
+// Issues whose scan has no cover (opens on text or an ad) are left off the site.
+const out = seed.filter(it => !it.exclude).map(it => {
   const u = uploaded[it.ark];
   return u
     ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4), tiers: u.tiers || [['w800', 800], ['w1600', 1600]] }
