@@ -196,5 +196,41 @@
     2400
    ]
   ]
+ },
+ "bpt6k96041211": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 71,
+  "w": 2400,
+  "h": 3256,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
+ },
+ "bpt6k6537260c": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 11,
+  "last": 74,
+  "w": 2400,
+  "h": 3260,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
  }
 }

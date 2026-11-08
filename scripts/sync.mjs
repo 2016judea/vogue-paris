@@ -30,7 +30,8 @@ async function pool(items, n, fn) {
 for (const it of seed) {
   const dir = path.join(MIRROR, it.ark);
   if (uploaded[it.ark]?.hi || !fs.existsSync(path.join(dir, 'DONE'))) continue;
-  const all = fs.readdirSync(dir).filter(f => /^p\d{3}\.jpg$/.test(f)).sort();
+  // it.start is the cover page checked by eye for bound volumes; never begin before it.
+  const all = fs.readdirSync(dir).filter(f => /^p\d{3}\.jpg$/.test(f) && +f.slice(1, 4) >= it.start).sort();
   const labels = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'))).pages.map(p => String(p.label || ''));
   // Bound volumes open on the binding board, marbled endpapers and blank leaves
   // before the cover (2026-11-08: 15 juin 1920 had ten such pages). Trim them,

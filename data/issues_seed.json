@@ -446,8 +446,8 @@
 "year": 1923,
 "date": "1923-07-01",
 "label": "01 juillet 1923",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k6539771h",
@@ -598,8 +598,8 @@
 "year": 1925,
 "date": "1925-07-01",
 "label": "01 juillet 1925",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k6544188f",
@@ -646,8 +646,8 @@
 "year": 1926,
 "date": "1926-01-01",
 "label": "01 janvier 1926",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k65388259",
@@ -694,8 +694,8 @@
 "year": 1926,
 "date": "1926-07-01",
 "label": "01 juillet 1926",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k6538696p",
@@ -862,8 +862,8 @@
 "year": 1930,
 "date": "1930-01-01",
 "label": "01 janvier 1930",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k65398565",
@@ -1185,8 +1185,8 @@
 "year": 1936,
 "date": "1936-01-01",
 "label": "01 janvier 1936",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bpt6k65398832",
@@ -1393,8 +1393,8 @@
 "year": 1945,
 "date": "1945-01-01",
 "label": "01 janvier 1945",
-"start": 1,
-"bound": false
+"start": 9,
+"bound": true
 },
 {
 "ark": "bd6t54209225k",
@@ -1425,8 +1425,8 @@
 "year": 1947,
 "date": "1947-01-01",
 "label": "01 janvier 1947",
-"start": 1,
-"bound": false
+"start": 9,
+"bound": true
 },
 {
 "ark": "bd6t54207762z",
@@ -1449,8 +1449,8 @@
 "year": 1948,
 "date": "1948-07-01",
 "label": "01 juillet 1948",
-"start": 1,
-"bound": false
+"start": 7,
+"bound": true
 },
 {
 "ark": "bd6t542077085",
@@ -1497,8 +1497,8 @@
 "year": 1949,
 "date": "1949-07-01",
 "label": "01 juillet 1949",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t54207204s",
@@ -1569,8 +1569,8 @@
 "year": 1950,
 "date": "1950-07-01",
 "label": "01 juillet 1950",
-"start": 1,
-"bound": false
+"start": 7,
+"bound": true
 },
 {
 "ark": "bd6t54208490j",
@@ -1609,8 +1609,8 @@
 "year": 1951,
 "date": "1951-01-01",
 "label": "1951",
-"start": 1,
-"bound": false
+"start": 7,
+"bound": true
 },
 {
 "ark": "bpt6k1206311b",
@@ -1657,8 +1657,8 @@
 "year": 1951,
 "date": "1951-07-01",
 "label": "01 juillet 1951",
-"start": 1,
-"bound": false
+"start": 9,
+"bound": true
 },
 {
 "ark": "bd6t54207193f",
@@ -1697,8 +1697,8 @@
 "year": 1952,
 "date": "1952-02-01",
 "label": "01 février 1952",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t542078073",
@@ -1721,8 +1721,8 @@
 "year": 1952,
 "date": "1952-07-01",
 "label": "01 juillet 1952",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t54208703d",
@@ -1761,16 +1761,16 @@
 "year": 1953,
 "date": "1953-02-01",
 "label": "01 février 1953",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t54207198h",
 "year": 1953,
 "date": "1953-06-01",
 "label": "01 juin 1953",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t54207199x",
@@ -1825,8 +1825,8 @@
 "year": 1954,
 "date": "1954-06-01",
 "label": "01 juin 1954",
-"start": 1,
-"bound": false
+"start": 11,
+"bound": true
 },
 {
 "ark": "bd6t542094540",
