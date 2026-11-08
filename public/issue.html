@@ -199,6 +199,28 @@
     .pending { max-width: 520px; margin: 0 auto; padding: 28px 26px 0; text-align: center; }
     .pending img { width: min(100%, 360px); height: auto; display: block; margin: 0 auto 26px; box-shadow: 0 18px 46px rgba(0,0,0,.6); }
     .pending p { font-family: var(--read); font-size: 16px; line-height: 1.6; color: var(--ink-dim); }
+
+    /* ── English · the translation under each page ───────────────────────────
+       OCR'd on-device (Apple Vision) and translated by an open-source model
+       (scripts/translate.mjs). Set on the page's own paper so it reads as part
+       of the magazine, the way GLEAN's text view does on a phone. */
+    .ptext { display: none; }
+    body.show-en .ptext { display: block; }
+    .ptext {
+      background: #efe8da; color: #25211a;
+      font-family: var(--read); font-size: 18px; line-height: 1.6;
+      padding: 22px 26px 26px; border-top: 1px solid rgba(37,33,26,.12);
+      -webkit-text-size-adjust: 100%;
+    }
+    .ptext p { margin: 0 0 0.85em; max-width: 62ch; }
+    .ptext .lab {
+      font-family: 'Geist Mono', monospace; font-size: 9.5px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(37,33,26,.5); margin-bottom: 12px;
+    }
+    @media (min-width: 1000px) { .ptext { font-size: 17px; padding: 26px 34px 30px; } }
+    #enToggle { display: none; }
+    body.has-en #enToggle { display: inline-block; }
+    #enToggle.on { color: var(--accent-ink); }
     @media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } html { scroll-behavior: auto; } }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -231,6 +253,7 @@
       <button class="contents-toggle" id="contentsToggle" aria-expanded="false" aria-controls="sheet">Issues</button>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuItems">Menu</button>
       <div class="menu-items" id="menuItems">
+        <button id="enToggle" type="button" aria-pressed="false">English</button>
         <a id="prevIssue" href="#">&larr; Prev</a>
         <a id="nextIssue" href="#">Next &rarr;</a>
         <a href="/">All issues</a>
@@ -347,10 +370,38 @@
       }, { rootMargin: '-48% 0px -48% 0px' });
       pageEls.forEach(function (el) { io.observe(el); });
       setCounter(1);
+      if (it.en) loadEnglish(it);
       // The counter would sit on the closing text, so it steps out once the end is in view.
       new IntersectionObserver(function (e) {
         document.getElementById('counter').style.opacity = e[0].isIntersecting ? '0' : '';
       }).observe(colophon);
+    }
+
+
+    /* ── English toggle ─────────────────────────────────────────────────── */
+    function loadEnglish(it) {
+      fetch('/text/' + it.ark + '.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (tx) {
+        if (!tx) return;
+        body.classList.add('has-en');
+        pageEls.forEach(function (el) {
+          var t = tx[el.getAttribute('data-page')];
+          if (!t || !t.en) return;
+          var d = document.createElement('div');
+          d.className = 'ptext'; d.lang = 'en';
+          d.innerHTML = '<div class="lab">English \u00b7 page ' + el.getAttribute('data-page') + '</div>' +
+            t.en.split(/\n+/).map(function (p) { return '<p>' + p.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>'; }).join('');
+          el.appendChild(d);
+        });
+        var b = document.getElementById('enToggle'), on = false;
+        try { on = localStorage.getItem('vp-en') === '1'; } catch (e) {}
+        function set(v) {
+          on = v; body.classList.toggle('show-en', v);
+          b.classList.toggle('on', v); b.setAttribute('aria-pressed', v ? 'true' : 'false');
+          try { localStorage.setItem('vp-en', v ? '1' : '0'); } catch (e) {}
+        }
+        set(on);
+        b.addEventListener('click', function (e) { e.stopPropagation(); set(!on); });
+      });
     }
 
     /* ── sheet ──────────────────────────────────────────────────────────── */
