@@ -2,3 +2,4 @@ mirror/
 node_modules/
 .env*
 .vercel
+*.log
