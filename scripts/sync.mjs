@@ -28,10 +28,21 @@ async function pool(items, n, fn) {
   await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) await fn(items[i++]); }));
 }
 
+function reviewDone(ark) {
+  const u = uploaded[ark], p = path.join(ROOT, 'data/crop_review', ark + '.json');
+  if (!u || !fs.existsSync(p)) return false;
+  const r = JSON.parse(fs.readFileSync(p));
+  for (let n = u.first; n <= u.last; n++) if (!(`p${pad(n)}.jpg` in r)) return false;
+  return true;
+}
+
 for (const it of seed) {
   const dir = path.join(MIRROR, it.ark);
   if (it.exclude || fs.existsSync(path.join(MIRROR, it.ark, 'BOUND'))) continue;
-  if (uploaded[it.ark]?.hi || !fs.existsSync(path.join(dir, 'DONE'))) continue;
+  // Re-upload once Claude has reviewed every page's crop (data/crop_review, Aidan 2026-11-08:
+  // "manually inspecting every page and custom cropping it").
+  const reviewed = reviewDone(it.ark);
+  if ((uploaded[it.ark]?.hi && (uploaded[it.ark].reviewed || !reviewed)) || !fs.existsSync(path.join(dir, 'DONE'))) continue;
   // it.start is the cover page checked by eye for bound volumes; never begin before it.
   const all = fs.readdirSync(dir).filter(f => /^p\d{3}\.jpg$/.test(f) && +f.slice(1, 4) >= it.start).sort();
   const labels = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'))).pages.map(p => String(p.label || ''));
@@ -58,8 +69,10 @@ for (const it of seed) {
   const coverN = +files[0].slice(1, 4);
   // Crop each scan to the physical page and level it (scripts/crop.py): Gallica's
   // photos show the scanner bed, gutter and neighbouring leaves around the page.
-  const cropDir = path.join(ROOT, 'mirror-crop', it.ark);
-  if (!fs.existsSync(path.join(cropDir, 'DONE'))) {
+  const cropDir = path.join(ROOT, reviewed ? 'mirror-reviewed' : 'mirror-crop', it.ark);
+  if (reviewed && !fs.existsSync(path.join(cropDir, 'DONE'))) {
+    execFileSync(path.join(ROOT, '.venv/bin/python'), [path.join(ROOT, 'scripts/apply_crop.py'), it.ark, cropDir], { stdio: 'inherit' });
+  } else if (!fs.existsSync(path.join(cropDir, 'DONE'))) {
     execFileSync(path.join(ROOT, '.venv/bin/python'), [path.join(ROOT, 'scripts/crop.py'), '--dir', dir, cropDir], { stdio: 'inherit' });
     fs.writeFileSync(path.join(cropDir, 'DONE'), '');
   }
@@ -83,7 +96,7 @@ for (const it of seed) {
     }
   });
   const nums = files.map(f => +f.slice(1, 4));
-  uploaded[it.ark] = { base, first: Math.min(...nums), last: Math.max(...nums), w, h, hi: true, tiers: TIERS.map(t => [t[0], t[1]]) };
+  uploaded[it.ark] = { base, first: Math.min(...nums), last: Math.max(...nums), w, h, hi: true, reviewed, tiers: TIERS.map(t => [t[0], t[1]]) };
   fs.writeFileSync(upPath, JSON.stringify(uploaded, null, 1));
   console.log('uploaded', it.date, it.ark, files.length, 'pages');
 }

@@ -7,3 +7,4 @@ mirror-hi/
 bin/
 .venv/
 mirror-crop/
+mirror-reviewed/
