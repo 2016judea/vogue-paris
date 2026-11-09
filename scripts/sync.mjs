@@ -30,6 +30,7 @@ async function pool(items, n, fn) {
 
 for (const it of seed) {
   const dir = path.join(MIRROR, it.ark);
+  if (it.exclude || fs.existsSync(path.join(MIRROR, it.ark, 'BOUND'))) continue;
   if (uploaded[it.ark]?.hi || !fs.existsSync(path.join(dir, 'DONE'))) continue;
   // it.start is the cover page checked by eye for bound volumes; never begin before it.
   const all = fs.readdirSync(dir).filter(f => /^p\d{3}\.jpg$/.test(f) && +f.slice(1, 4) >= it.start).sort();
@@ -88,7 +89,7 @@ for (const it of seed) {
 }
 
 // Issues whose scan has no cover (opens on text or an ad) are left off the site.
-const out = seed.filter(it => !it.exclude).map(it => {
+const out = seed.filter(it => !it.exclude && !fs.existsSync(path.join(MIRROR, it.ark, 'BOUND'))).map(it => {
   const u = uploaded[it.ark];
   return u
     ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4), tiers: u.tiers || [['w800', 800], ['w1600', 1600]], en: fs.existsSync(path.join(ROOT, 'public/text', it.ark + '.json')) }

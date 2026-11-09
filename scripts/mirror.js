@@ -27,12 +27,15 @@ const WIDTH=+(process.env.WIDTH||2400), GAP=+(process.env.GAP||900);
   throw new Error('gave up '+url);
  };
  for(const it of issues){
+  if(it.exclude)continue;
   const dir=path.join(outdir,it.ark);fs.mkdirSync(dir,{recursive:true});
   const mf=path.join(dir,'manifest.json');
   if(!fs.existsSync(mf)){const r=await get(`/iiif/ark:/12148/${it.ark}/manifest.json`,'json');
    const m=JSON.parse(r.json);const pages=m.sequences[0].canvases.map(c=>({w:c.width,h:c.height,label:c.label}));
    fs.writeFileSync(mf,JSON.stringify({ark:it.ark,pages}));await sleep(GAP);}
   const {pages}=JSON.parse(fs.readFileSync(mf));
+  // Half-year bound volumes (~570 pages) are not wanted (Aidan, 2026-11-08): mark and skip.
+  if(pages.length>200){fs.writeFileSync(path.join(dir,'BOUND'),'');console.log('skip bound volume',it.date,it.ark,pages.length);continue;}
   let got=0;const todo=[];
   for(let n=it.start;n<=pages.length;n++){const f=path.join(dir,`p${String(n).padStart(3,'0')}.jpg`);if(!fs.existsSync(f))todo.push([n,f]);}
   const CONC=+(process.env.CONC||3);

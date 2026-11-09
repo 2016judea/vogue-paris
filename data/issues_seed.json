@@ -439,7 +439,8 @@
 "date": "1923-01-01",
 "label": "01 janvier 1923",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k6538662w",
@@ -447,7 +448,8 @@
 "date": "1923-07-01",
 "label": "01 juillet 1923",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k6539771h",
