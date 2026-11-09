@@ -2824,5 +2824,95 @@
     2400
    ]
   ]
+ },
+ "bpt6k1206311b": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 7,
+  "last": 101,
+  "w": 2400,
+  "h": 3185,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
+ },
+ "bpt6k1206312r": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 116,
+  "w": 2400,
+  "h": 3331,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
+ },
+ "bpt6k12063135": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 135,
+  "w": 2302,
+  "h": 3202,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
+ },
+ "bpt6k1206314k": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 108,
+  "w": 2400,
+  "h": 3300,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
+ },
+ "bpt6k12063150": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 110,
+  "w": 2202,
+  "h": 3189,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
  }
 }
