@@ -355,5 +355,698 @@
 "right": 37,
 "top": 27,
 "bottom": 28
+},
+"p065.jpg": {
+"rot": 0.1,
+"left": 28,
+"right": 34,
+"top": 28,
+"bottom": 29
+},
+"p066.jpg": {
+"rot": 0.3,
+"left": 2,
+"top": 3,
+"right": 28
+},
+"p067.jpg": {
+"rot": -0.35,
+"left": 33,
+"right": 31,
+"top": 27,
+"bottom": 28
+},
+"p068.jpg": {
+"rot": 0.25,
+"left": 37,
+"right": 34,
+"top": 27,
+"bottom": 30
+},
+"p069.jpg": {
+"left": -33,
+"top": -38,
+"right": 1,
+"bottom": 2
+},
+"p070.jpg": {
+"rot": 0.1,
+"left": 35,
+"right": 36,
+"top": 27,
+"bottom": 28
+},
+"p071.jpg": {
+"rot": 0.35,
+"left": 28,
+"right": 36,
+"top": 26,
+"bottom": 29
+},
+"p072.jpg": {
+"left": 9,
+"top": -21,
+"right": -15,
+"bottom": 2
+},
+"p073.jpg": {
+"left": -16,
+"top": 3,
+"right": 2,
+"bottom": 5
+},
+"p074.jpg": {
+"left": -50,
+"top": -32,
+"right": -46
+},
+"p075.jpg": {
+"left": 34,
+"top": 1,
+"right": 2,
+"bottom": 4
+},
+"p076.jpg": {
+"left": 2,
+"top": 1,
+"right": -9,
+"bottom": 1
+},
+"p077.jpg": {
+"left": -18,
+"top": 3,
+"right": 2,
+"bottom": 4
+},
+"p078.jpg": {
+"left": 3,
+"top": 2,
+"right": -11
+},
+"p079.jpg": {
+"left": -17,
+"top": 3,
+"right": 1,
+"bottom": 3
+},
+"p080.jpg": {
+"left": -6,
+"top": 1,
+"right": -13
+},
+"p081.jpg": {
+"left": -17,
+"top": -39,
+"right": 1,
+"bottom": 4
+},
+"p082.jpg": {
+"rot": 0.55,
+"left": 40,
+"right": 38,
+"top": 28,
+"bottom": 31
+},
+"p083.jpg": {
+"rot": 0.75,
+"left": 5
+},
+"p084.jpg": {
+"left": 3,
+"top": -1,
+"right": -11,
+"bottom": -7
+},
+"p085.jpg": {
+"rot": 0.1,
+"left": 37,
+"right": 41,
+"top": 28,
+"bottom": 28
+},
+"p086.jpg": {
+"left": 3,
+"right": -9
+},
+"p087.jpg": {
+"left": -16,
+"top": 1,
+"bottom": 3
+},
+"p088.jpg": {
+"left": 34,
+"right": 31,
+"top": 27,
+"bottom": 25
+},
+"p089.jpg": {
+"left": -16,
+"top": 3,
+"bottom": -3
+},
+"p090.jpg": {
+"left": 3,
+"top": 1,
+"right": -7
+},
+"p091.jpg": {
+"rot": 0.15,
+"left": 35,
+"right": 45,
+"top": 27,
+"bottom": 31
+},
+"p092.jpg": {
+"rot": 0.6,
+"left": 4,
+"top": 2,
+"right": -12,
+"bottom": -4
+},
+"p093.jpg": {
+"left": -16,
+"top": 3,
+"bottom": 3
+},
+"p094.jpg": {
+"left": 2
+},
+"p095.jpg": "ok",
+"p096.jpg": {
+"left": 3,
+"right": -18
+},
+"p097.jpg": {
+"left": -15,
+"top": -6,
+"right": 1,
+"bottom": 3
+},
+"p098.jpg": "ok",
+"p099.jpg": {
+"top": 2,
+"right": 6,
+"bottom": -10
+},
+"p100.jpg": {
+"top": -38,
+"right": -10,
+"bottom": 1
+},
+"p101.jpg": {
+"left": -11,
+"top": 2,
+"bottom": 3
+},
+"p102.jpg": {
+"top": 1,
+"right": -10,
+"bottom": 2
+},
+"p103.jpg": {
+"left": -16,
+"top": 1
+},
+"p104.jpg": {
+"rot": 0.8,
+"left": 4,
+"right": -14,
+"top": -18,
+"bottom": -4
+},
+"p105.jpg": {
+"rot": -0.3,
+"left": -12,
+"top": -37,
+"right": 6,
+"bottom": 3
+},
+"p106.jpg": {
+"rot": 0.5,
+"left": 46,
+"right": 41,
+"top": 29,
+"bottom": 34
+},
+"p107.jpg": {
+"left": -9,
+"bottom": 3
+},
+"p108.jpg": {
+"left": -42
+},
+"p109.jpg": {
+"top": 1
+},
+"p110.jpg": {
+"left": 3,
+"top": 1,
+"right": -11,
+"bottom": -3
+},
+"p111.jpg": {
+"left": -14,
+"top": 1
+},
+"p112.jpg": {
+"top": -7
+},
+"p113.jpg": {
+"left": -14,
+"top": 2,
+"right": 1,
+"bottom": -12
+},
+"p114.jpg": {
+"left": 4,
+"top": 1,
+"right": -15,
+"bottom": -4
+},
+"p115.jpg": {
+"left": -14,
+"top": -5
+},
+"p116.jpg": {
+"rot": 0.45,
+"left": 40,
+"right": 41,
+"top": 28,
+"bottom": 31
+},
+"p117.jpg": {
+"left": -13,
+"top": 2,
+"right": 1,
+"bottom": 3
+},
+"p118.jpg": {
+"rot": 0.3,
+"left": 39,
+"right": 36,
+"top": 26,
+"bottom": 31
+},
+"p119.jpg": {
+"left": -13,
+"top": -52,
+"right": 1,
+"bottom": -97
+},
+"p120.jpg": "ok",
+"p121.jpg": {
+"top": 2,
+"bottom": 3
+},
+"p122.jpg": {
+"left": 21,
+"right": 22,
+"top": 20,
+"bottom": 22
+},
+"p123.jpg": {
+"left": 2
+},
+"p124.jpg": {
+"left": 2
+},
+"p125.jpg": "ok",
+"p126.jpg": {
+"rot": -0.1,
+"left": -12,
+"right": -4,
+"top": -12,
+"bottom": 5
+},
+"p127.jpg": {
+"rot": 0.15,
+"left": 103,
+"right": 68,
+"top": 30,
+"bottom": 34
+},
+"p128.jpg": {
+"left": -20,
+"right": -2,
+"bottom": 2
+},
+"p129.jpg": {
+"rot": 0.3,
+"left": 108,
+"right": 79,
+"top": 37,
+"bottom": 34
+},
+"p130.jpg": {
+"left": -18,
+"right": -6
+},
+"p131.jpg": {
+"rot": 0.3,
+"left": 106,
+"right": 77,
+"top": 36,
+"bottom": 34
+},
+"p132.jpg": {
+"rot": 0.1,
+"left": 74,
+"right": 91,
+"top": 32,
+"bottom": 32
+},
+"p133.jpg": {
+"rot": 0.3,
+"left": 108,
+"right": 77,
+"top": 37,
+"bottom": 34
+},
+"p134.jpg": {
+"top": -12
+},
+"p135.jpg": {
+"left": 21,
+"right": 21,
+"top": 25,
+"bottom": 26
+},
+"p136.jpg": {
+"left": 1,
+"right": -18
+},
+"p137.jpg": {
+"left": -15,
+"top": 2,
+"bottom": 3
+},
+"p138.jpg": {
+"rot": 0.2,
+"left": 6
+},
+"p139.jpg": {
+"rot": -0.24,
+"left": -3,
+"right": 3
+},
+"p140.jpg": {
+"left": 3,
+"top": 1,
+"right": -20
+},
+"p141.jpg": {
+"left": -12,
+"top": 2,
+"right": 1,
+"bottom": 3
+},
+"p142.jpg": {
+"rot": 0.63,
+"left": -18,
+"right": 5,
+"top": 1,
+"bottom": -3
+},
+"p143.jpg": {
+"rot": 0.1,
+"left": -5,
+"right": 2,
+"top": -1
+},
+"p144.jpg": {
+"left": -13,
+"right": -19
+},
+"p145.jpg": {
+"left": -14,
+"top": -11,
+"bottom": 3
+},
+"p146.jpg": {
+"rot": 0.3,
+"left": 40,
+"right": 36,
+"top": 28,
+"bottom": 31
+},
+"p147.jpg": {
+"left": -13,
+"top": 2,
+"bottom": 3
+},
+"p148.jpg": {
+"left": 3,
+"top": 1,
+"right": -19
+},
+"p149.jpg": {
+"left": -14,
+"top": 2,
+"right": -10,
+"bottom": 3
+},
+"p150.jpg": {
+"left": 3,
+"top": 1,
+"right": -19,
+"bottom": -4
+},
+"p151.jpg": {
+"left": -14,
+"top": 1,
+"bottom": 3
+},
+"p152.jpg": {
+"left": 3,
+"top": -34,
+"right": -13
+},
+"p153.jpg": {
+"rot": -0.25,
+"left": 36,
+"right": 30,
+"top": 23,
+"bottom": 27
+},
+"p154.jpg": {
+"left": 34,
+"right": 28,
+"top": 26,
+"bottom": 29
+},
+"p155.jpg": {
+"rot": -0.03,
+"left": -13,
+"right": 2,
+"top": -37,
+"bottom": 3
+},
+"p156.jpg": {
+"left": 3,
+"top": 1,
+"right": -18
+},
+"p157.jpg": {
+"left": -11,
+"bottom": 2
+},
+"p158.jpg": {
+"left": 2,
+"right": -11
+},
+"p159.jpg": {
+"left": -7,
+"top": 1,
+"bottom": 3
+},
+"p160.jpg": {
+"rot": 0.25,
+"left": -264,
+"top": 2,
+"right": 2,
+"bottom": 2
+},
+"p161.jpg": "ok",
+"p162.jpg": {
+"rot": 0.05,
+"left": -2,
+"top": -4,
+"right": 1,
+"bottom": -13
+},
+"p163.jpg": {
+"rot": 0.2,
+"left": 2,
+"top": 2,
+"right": 4
+},
+"p164.jpg": {
+"left": 3,
+"top": 1,
+"right": -20,
+"bottom": -13
+},
+"p165.jpg": {
+"left": -15,
+"top": 2,
+"bottom": 3
+},
+"p166.jpg": {
+"left": 2,
+"right": 2
+},
+"p167.jpg": {
+"left": 3,
+"top": 2,
+"right": 15
+},
+"p168.jpg": {
+"rot": 0.4,
+"left": 30,
+"right": 38,
+"top": 28,
+"bottom": 32
+},
+"p169.jpg": {
+"left": 2,
+"top": 1,
+"right": -10
+},
+"p170.jpg": {
+"left": -17,
+"top": 2,
+"right": 3,
+"bottom": 3
+},
+"p171.jpg": {
+"rot": 0.4,
+"left": 43,
+"right": 26,
+"top": 26,
+"bottom": 32
+},
+"p172.jpg": {
+"left": -15,
+"top": -38,
+"right": 2,
+"bottom": 2
+},
+"p173.jpg": {
+"left": 4,
+"top": 1,
+"right": -8
+},
+"p174.jpg": {
+"left": -14,
+"top": -36,
+"right": 2,
+"bottom": 2
+},
+"p175.jpg": {
+"left": 4,
+"top": 2,
+"right": -10
+},
+"p176.jpg": {
+"left": -12,
+"top": 1,
+"bottom": 1
+},
+"p177.jpg": {
+"left": 2,
+"top": 1,
+"right": -11
+},
+"p178.jpg": {
+"rot": 0.6,
+"left": 33,
+"right": 33,
+"top": 28,
+"bottom": 28
+},
+"p179.jpg": {
+"left": 4,
+"top": 2
+},
+"p180.jpg": {
+"rot": 0.4,
+"left": 24,
+"right": 37,
+"top": 28,
+"bottom": 28
+},
+"p181.jpg": {
+"left": 4,
+"top": 1,
+"right": -11
+},
+"p182.jpg": {
+"left": -12,
+"top": -29,
+"right": 2,
+"bottom": 1
+},
+"p183.jpg": {
+"left": 4,
+"top": 1,
+"right": -12
+},
+"p184.jpg": {
+"left": -14,
+"top": 2,
+"bottom": 1
+},
+"p185.jpg": {
+"left": 3,
+"top": 1,
+"right": -11
+},
+"p186.jpg": {
+"left": -15,
+"top": 2,
+"bottom": 1
+},
+"p187.jpg": {
+"rot": 0.3,
+"left": 35,
+"right": 35,
+"top": 20,
+"bottom": 28
+},
+"p188.jpg": {
+"rot": 0.35,
+"left": 28,
+"right": 39,
+"top": 27,
+"bottom": 28
+},
+"p189.jpg": {
+"left": 2,
+"top": 1,
+"right": -10
+},
+"p190.jpg": {
+"rot": 0.3,
+"left": -15,
+"right": 3,
+"top": 1,
+"bottom": 3
+},
+"p191.jpg": {
+"rot": 0,
+"left": 31,
+"top": 22,
+"right": 48,
+"bottom": 28
+},
+"p192.jpg": {
+"left": 2,
+"top": 1
+},
+"p193.jpg": {
+"left": 45,
+"right": 24,
+"top": 26,
+"bottom": 30
 }
 }

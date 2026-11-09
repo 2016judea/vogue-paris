@@ -154,7 +154,7 @@
  "p026.jpg": {
   "rot": 0.41,
   "left": 2,
-  "top": 2,
+  "top": 3,
   "bottom": 2,
   "right": -6
  },
@@ -170,5 +170,326 @@
   "top": 2,
   "bottom": 2,
   "right": -11
+ },
+ "p029.jpg": {
+  "rot": 0.5,
+  "left": 31,
+  "top": 36,
+  "right": 39,
+  "bottom": 31
+ },
+ "p030.jpg": {
+  "rot": 0.35,
+  "top": -3,
+  "bottom": 2,
+  "right": -2
+ },
+ "p031.jpg": {
+  "left": 4,
+  "bottom": 2,
+  "right": -15
+ },
+ "p032.jpg": {
+  "rot": 0.3,
+  "left": 7,
+  "top": 2,
+  "bottom": 5,
+  "right": -2
+ },
+ "p033.jpg": {
+  "left": 5,
+  "top": 3,
+  "right": 8,
+  "bottom": 2
+ },
+ "p034.jpg": {
+  "rot": 0.09,
+  "left": 2,
+  "top": 5,
+  "bottom": 6
+ },
+ "p035.jpg": {
+  "rot": -0.14,
+  "left": 1,
+  "top": 5,
+  "bottom": 1,
+  "right": -1
+ },
+ "p036.jpg": {
+  "rot": 0.09,
+  "left": 2,
+  "top": -1,
+  "bottom": 3,
+  "right": -292
+ },
+ "p037.jpg": {
+  "rot": 0.55,
+  "left": 21,
+  "top": 33,
+  "right": 22,
+  "bottom": 28
+ },
+ "p038.jpg": {
+  "left": 1,
+  "top": 2,
+  "right": 6
+ },
+ "p039.jpg": {
+  "left": 7,
+  "top": 4,
+  "right": 1
+ },
+ "p040.jpg": {
+  "left": 5,
+  "top": 3,
+  "bottom": 2,
+  "right": -13
+ },
+ "p041.jpg": {
+  "left": 12,
+  "top": 4,
+  "bottom": 5,
+  "right": 1
+ },
+ "p042.jpg": {
+  "left": 3,
+  "top": 6,
+  "bottom": 2,
+  "right": 3
+ },
+ "p043.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 1,
+  "right": -12
+ },
+ "p044.jpg": {
+  "top": 4,
+  "right": 1,
+  "bottom": 4
+ },
+ "p045.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 1,
+  "right": -11
+ },
+ "p046.jpg": {
+  "left": 3,
+  "top": 4,
+  "bottom": 5,
+  "right": 1
+ },
+ "p047.jpg": {
+  "left": 6,
+  "top": 3,
+  "bottom": 2
+ },
+ "p048.jpg": {
+  "left": 6,
+  "top": 2,
+  "bottom": 1
+ },
+ "p049.jpg": {
+  "rot": -0.38,
+  "left": 6,
+  "top": 10,
+  "bottom": -5,
+  "right": 3
+ },
+ "p050.jpg": {
+  "rot": -0.35,
+  "left": 35,
+  "top": 27,
+  "bottom": 26,
+  "right": 44
+ },
+ "p051.jpg": {
+  "rot": -0.27,
+  "left": 10,
+  "top": 4
+ },
+ "p052.jpg": {
+  "rot": -0.4,
+  "left": 36,
+  "top": 28,
+  "bottom": 27,
+  "right": 44
+ },
+ "p053.jpg": {
+  "rot": -0.1,
+  "left": 8,
+  "top": 1,
+  "bottom": 3,
+  "right": 2
+ },
+ "p054.jpg": {
+  "left": 4,
+  "top": 4,
+  "bottom": 2,
+  "right": -4
+ },
+ "p055.jpg": {
+  "left": 43,
+  "top": 27,
+  "bottom": 27,
+  "right": 32
+ },
+ "p056.jpg": {
+  "rot": 0.54,
+  "left": 2,
+  "top": 4,
+  "bottom": 1
+ },
+ "p057.jpg": {
+  "left": 7,
+  "top": 8,
+  "right": 5
+ },
+ "p058.jpg": {
+  "left": -246,
+  "top": 12,
+  "right": 4,
+  "bottom": -6
+ },
+ "p059.jpg": {
+  "left": 2,
+  "top": 4,
+  "right": 24,
+  "bottom": 1
+ },
+ "p060.jpg": {
+  "left": -8,
+  "top": 4,
+  "right": 4,
+  "bottom": 5
+ },
+ "p061.jpg": {
+  "left": 4,
+  "top": 5,
+  "bottom": 3
+ },
+ "p062.jpg": {
+  "left": 2,
+  "top": 5,
+  "right": 3,
+  "bottom": 6
+ },
+ "p063.jpg": {
+  "left": 4,
+  "top": 4,
+  "bottom": 2
+ },
+ "p064.jpg": {
+  "left": 31,
+  "top": 5,
+  "right": 3,
+  "bottom": 2
+ },
+ "p065.jpg": {
+  "left": 4,
+  "top": 4,
+  "bottom": 3
+ },
+ "p066.jpg": {
+  "top": 5,
+  "right": 2,
+  "bottom": 5
+ },
+ "p067.jpg": {
+  "left": 4,
+  "top": 7,
+  "right": 4
+ },
+ "p068.jpg": {
+  "left": -243,
+  "top": 7,
+  "right": 4
+ },
+ "p069.jpg": {
+  "left": 4,
+  "top": 1,
+  "bottom": 3
+ },
+ "p070.jpg": {
+  "top": 5,
+  "right": 1,
+  "bottom": 4
+ },
+ "p071.jpg": {
+  "left": -44,
+  "top": 4,
+  "bottom": 2
+ },
+ "p072.jpg": {
+  "left": 29,
+  "top": 4,
+  "right": 3,
+  "bottom": 3
+ },
+ "p073.jpg": {
+  "left": 5,
+  "top": 6,
+  "bottom": 3
+ },
+ "p074.jpg": {
+  "left": 42,
+  "top": 31,
+  "right": 40,
+  "bottom": 31
+ },
+ "p075.jpg": {
+  "left": -44,
+  "top": 6,
+  "right": -10,
+  "bottom": 3
+ },
+ "p076.jpg": {
+  "top": 4,
+  "right": 2,
+  "bottom": -18
+ },
+ "p077.jpg": {
+  "left": 5,
+  "top": 3,
+  "bottom": 3
+ },
+ "p078.jpg": {
+  "top": 3,
+  "right": 2,
+  "bottom": 3
+ },
+ "p079.jpg": {
+  "left": -247,
+  "top": 7,
+  "right": 3,
+  "bottom": 1
+ },
+ "p080.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 2
+ },
+ "p081.jpg": {
+  "rot": 0.29,
+  "top": 3,
+  "right": 3,
+  "bottom": 3
+ },
+ "p082.jpg": {
+  "left": 2,
+  "top": 3,
+  "bottom": 2
+ },
+ "p083.jpg": {
+  "rot": 0.25,
+  "top": 3,
+  "right": 3,
+  "bottom": 3
+ },
+ "p084.jpg": {
+  "left": 4,
+  "top": 4,
+  "bottom": 3
  }
 }

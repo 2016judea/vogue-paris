@@ -1,0 +1,56 @@
+{
+"p001.jpg": {
+"rot": 0.1,
+"left": 56,
+"right": 41,
+"top": 32,
+"bottom": 34
+},
+"p002.jpg": {
+"rot": 0.15,
+"left": 1,
+"right": -2,
+"top": 1,
+"bottom": 1
+},
+"p003.jpg": {
+"left": 17,
+"right": 10,
+"top": -1,
+"bottom": 2,
+"rot": 0.0
+},
+"p004.jpg": {
+"rot": 0.0,
+"left": 37,
+"right": 35,
+"top": 29,
+"bottom": 29
+},
+"p005.jpg": {
+"rot": 0.0,
+"left": 39,
+"right": 40,
+"top": 32,
+"bottom": 33
+},
+"p006.jpg": {
+"rot": 0.1,
+"left": 37,
+"right": 38,
+"top": 28,
+"bottom": 28
+},
+"p007.jpg": {
+"left": -13,
+"top": -2,
+"right": 8,
+"bottom": -1
+},
+"p008.jpg": {
+"left": 7,
+"top": 4,
+"right": -12,
+"bottom": 3
+}
+}
