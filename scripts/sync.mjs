@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { put } from '@vercel/blob';
+import { execFileSync } from 'node:child_process';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 for (const line of fs.readFileSync(path.join(ROOT, '.env.local'), 'utf8').split('\n')) {
@@ -54,10 +55,17 @@ for (const it of seed) {
   while (z > a && await junk(all[z])) z--;
   const files = all.slice(a, z + 1);
   const coverN = +files[0].slice(1, 4);
+  // Crop each scan to the physical page and level it (scripts/crop.py): Gallica's
+  // photos show the scanner bed, gutter and neighbouring leaves around the page.
+  const cropDir = path.join(ROOT, 'mirror-crop', it.ark);
+  if (!fs.existsSync(path.join(cropDir, 'DONE'))) {
+    execFileSync(path.join(ROOT, '.venv/bin/python'), [path.join(ROOT, 'scripts/crop.py'), '--dir', dir, cropDir], { stdio: 'inherit' });
+    fs.writeFileSync(path.join(cropDir, 'DONE'), '');
+  }
   let base = null, w = 0, h = 0;
   await pool(files, 6, async f => {
     const n = +f.slice(1, 4);
-    const src = path.join(dir, f);
+    const src = fs.existsSync(path.join(cropDir, f)) ? path.join(cropDir, f) : path.join(dir, f);
     for (const [tier, width, q] of TIERS) {
       const buf = await sharp(src).resize({ width, withoutEnlargement: true }).webp({ quality: q }).toBuffer();
       const r = await put(`vogue/${it.ark}/${tier}/p${pad(n)}.webp`, buf, {

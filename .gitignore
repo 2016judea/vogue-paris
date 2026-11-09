@@ -5,3 +5,5 @@ node_modules/
 *.log
 mirror-hi/
 bin/
+.venv/
+mirror-crop/
