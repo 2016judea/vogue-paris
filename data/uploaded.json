@@ -3,9 +3,10 @@
   "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
   "first": 11,
   "last": 74,
-  "w": 2271,
-  "h": 3157,
+  "w": 2270,
+  "h": 3197,
   "hi": true,
+  "reviewed": true,
   "tiers": [
    [
     "w1200",
