@@ -1,0 +1,351 @@
+{
+"p001.jpg": {
+"rot": 0.0,
+"left": -20,
+"right": 8,
+"top": 6,
+"bottom": 2
+},
+"p002.jpg": {
+"rot": -0.5,
+"left": 42,
+"right": 20,
+"top": 24,
+"bottom": 25
+},
+"p003.jpg": {
+"rot": 0.45,
+"left": 19,
+"right": -9,
+"top": 5,
+"bottom": 1
+},
+"p004.jpg": {
+"rot": -0.2,
+"left": 45,
+"right": 18,
+"top": 23,
+"bottom": 24
+},
+"p005.jpg": {
+"rot": 0.45,
+"left": 41,
+"right": 36,
+"top": 32,
+"bottom": 19
+},
+"p006.jpg": {
+"rot": 0.2,
+"left": -241,
+"right": 3,
+"top": 4,
+"bottom": -1
+},
+"p007.jpg": {
+"rot": -0.45,
+"left": 46,
+"right": 15,
+"top": 25,
+"bottom": 24
+},
+"p008.jpg": {
+"rot": 0.45,
+"left": -7,
+"right": 6,
+"top": -37,
+"bottom": 3
+},
+"p009.jpg": {
+"rot": -0.57,
+"left": 2,
+"right": 28,
+"top": 4,
+"bottom": 8
+},
+"p010.jpg": {
+"rot": 0.55,
+"left": 29,
+"right": 38,
+"top": 32,
+"bottom": 20
+},
+"p011.jpg": {
+"rot": -0.3,
+"left": -19,
+"right": -20,
+"top": 4,
+"bottom": -1
+},
+"p012.jpg": {
+"rot": 0.55,
+"left": 27,
+"right": 40,
+"top": 32,
+"bottom": 21
+},
+"p013.jpg": {
+"rot": -0.5,
+"left": 44,
+"right": 14,
+"top": 26,
+"bottom": 22
+},
+"p014.jpg": {
+"rot": 0.5,
+"left": 29,
+"right": 40,
+"top": 31,
+"bottom": 20
+},
+"p015.jpg": {
+"rot": -0.25,
+"left": 43,
+"right": 15,
+"top": 24,
+"bottom": 22
+},
+"p016.jpg": {
+"rot": 0.55,
+"left": 25,
+"right": 38,
+"top": 26,
+"bottom": 24
+},
+"p017.jpg": {
+"rot": -0.25,
+"left": -10,
+"right": 10,
+"top": 4,
+"bottom": 6
+},
+"p018.jpg": {
+"rot": 0.55,
+"left": -4,
+"right": -9,
+"top": 5,
+"bottom": 2
+},
+"p019.jpg": {
+"rot": -0.3,
+"left": 7,
+"right": 12,
+"top": 4,
+"bottom": 6
+},
+"p020.jpg": {
+"rot": 0.55,
+"left": 25,
+"right": 44,
+"top": 25,
+"bottom": 25
+},
+"p021.jpg": {
+"rot": -0.35,
+"left": 10,
+"right": -14,
+"top": 5,
+"bottom": 6
+},
+"p022.jpg": {
+"rot": 0.55,
+"left": 26,
+"right": 39,
+"top": 25,
+"bottom": 25
+},
+"p023.jpg": {
+"rot": -0.35,
+"left": 46,
+"right": 17,
+"top": 25,
+"bottom": 23
+},
+"p024.jpg": {
+"rot": 0.55,
+"left": 25,
+"right": 42,
+"top": 25,
+"bottom": 25
+},
+"p025.jpg": {
+"rot": -0.45,
+"left": 12,
+"top": 5,
+"bottom": 2
+},
+"p026.jpg": {
+"rot": 0.55,
+"left": 28,
+"right": 38,
+"top": 26,
+"bottom": 25
+},
+"p027.jpg": {
+"rot": -0.3,
+"left": 13,
+"right": 9,
+"top": -39,
+"bottom": -2
+},
+"p028.jpg": {
+"rot": 0.7,
+"left": 5,
+"right": -19,
+"top": 6,
+"bottom": 3
+},
+"p029.jpg": {
+"rot": -0.5,
+"left": -18,
+"right": 28,
+"top": 5,
+"bottom": 2
+},
+"p030.jpg": {
+"rot": 0.55,
+"left": 30,
+"right": 35,
+"top": 25,
+"bottom": 25
+},
+"p031.jpg": {
+"rot": -0.5,
+"left": 37,
+"right": 18,
+"top": 26,
+"bottom": 22
+},
+"p032.jpg": {
+"rot": 0.55,
+"left": -8,
+"right": -47,
+"top": 6,
+"bottom": 1
+},
+"p033.jpg": {
+"rot": -0.35,
+"left": -13,
+"right": 23,
+"top": 5
+},
+"p034.jpg": {
+"rot": 0.8,
+"left": 31,
+"right": 41,
+"top": 27,
+"bottom": 23
+},
+"p035.jpg": {
+"rot": -0.45,
+"left": 43,
+"right": 18,
+"top": 25,
+"bottom": 22
+},
+"p036.jpg": {
+"rot": 0.72,
+"left": 13,
+"right": 8,
+"top": 5,
+"bottom": 3
+},
+"p037.jpg": {
+"rot": -0.45,
+"left": 2,
+"right": -8,
+"top": 3,
+"bottom": 3
+},
+"p038.jpg": {
+"rot": 0.75,
+"left": -12,
+"right": -16,
+"top": 5,
+"bottom": 5
+},
+"p039.jpg": {
+"top": 1,
+"bottom": 1
+},
+"p040.jpg": {
+"rot": 0.75,
+"left": -11,
+"right": 7,
+"top": 5,
+"bottom": 2
+},
+"p041.jpg": {
+"rot": -0.45,
+"left": 43,
+"right": 10,
+"top": 26,
+"bottom": 22
+},
+"p042.jpg": {
+"rot": 0.55,
+"left": -16,
+"right": 4,
+"top": -36,
+"bottom": 1
+},
+"p043.jpg": {
+"rot": -0.45,
+"left": 11,
+"right": -11,
+"top": -42,
+"bottom": 4
+},
+"p044.jpg": {
+"rot": 0.45,
+"left": -12,
+"right": 2,
+"top": 6,
+"bottom": 3
+},
+"p045.jpg": {
+"rot": -0.55,
+"left": 2,
+"right": -14,
+"top": 4,
+"bottom": 5
+},
+"p046.jpg": {
+"rot": 0.5,
+"left": 20,
+"right": 3,
+"top": 4
+},
+"p047.jpg": {
+"left": 2,
+"right": -18,
+"bottom": 4
+},
+"p048.jpg": {
+"rot": 0.5,
+"left": -12,
+"right": 8,
+"top": 6,
+"bottom": 4
+},
+"p049.jpg": {
+"rot": -0.45,
+"left": 6,
+"right": -14,
+"top": -9,
+"bottom": 7
+},
+"p050.jpg": {
+"rot": 0.5,
+"left": -15,
+"right": 2,
+"top": 3,
+"bottom": 3
+},
+"p051.jpg": {
+"rot": -0.4,
+"left": 9,
+"right": -14,
+"top": 5,
+"bottom": 9
+}
+}

@@ -1,0 +1,198 @@
+{
+"p007.jpg": {
+"rot": 0.0,
+"left": 12
+},
+"p008.jpg": {
+"left": 37,
+"right": 12,
+"top": 25,
+"bottom": 21
+},
+"p009.jpg": {
+"top": 6,
+"right": 4
+},
+"p010.jpg": {
+"left": 11,
+"top": 4,
+"bottom": 2
+},
+"p011.jpg": {
+"rot": 0.1,
+"top": 4,
+"right": 3,
+"bottom": 5
+},
+"p012.jpg": {
+"top": 3,
+"bottom": 3,
+"left": 1
+},
+"p013.jpg": {
+"top": 5,
+"right": 2
+},
+"p014.jpg": {
+"left": 6,
+"top": 2,
+"bottom": 2
+},
+"p015.jpg": {
+"top": 6,
+"right": 3,
+"bottom": 7
+},
+"p016.jpg": {
+"left": 9,
+"top": 3,
+"bottom": 4
+},
+"p017.jpg": {
+"rot": 0.0,
+"top": 6,
+"right": 4,
+"bottom": 6
+},
+"p018.jpg": {
+"left": 9,
+"top": 4,
+"bottom": 4
+},
+"p019.jpg": {
+"top": 7,
+"right": 4,
+"bottom": 6
+},
+"p020.jpg": {
+"left": 4,
+"top": 3
+},
+"p021.jpg": {
+"rot": 0.0,
+"top": 5,
+"right": 3,
+"bottom": 5
+},
+"p022.jpg": {
+"rot": 0.0,
+"left": 25,
+"right": 4,
+"top": -39,
+"bottom": 6
+},
+"p023.jpg": {
+"top": 4,
+"right": 7,
+"bottom": 3
+},
+"p024.jpg": {
+"rot": -0.45,
+"left": -51,
+"right": -12,
+"top": 5,
+"bottom": 7
+},
+"p025.jpg": {
+"rot": 0.0,
+"left": -6,
+"right": -45,
+"top": -4,
+"bottom": 3
+},
+"p026.jpg": {
+"rot": -0.48,
+"left": -56,
+"right": 3,
+"top": 7,
+"bottom": 5
+},
+"p029.jpg": {
+"right": 4
+},
+"p030.jpg": {
+"left": 6,
+"top": 3,
+"bottom": 12
+},
+"p027.jpg": {
+"rot": -0.4,
+"left": 20,
+"right": 38,
+"top": 23,
+"bottom": 34
+},
+"p028.jpg": {
+"rot": -0.26,
+"left": 47,
+"right": 15,
+"top": 26,
+"bottom": 22
+},
+"p031.jpg": {
+"right": 4,
+"top": 6,
+"bottom": 2
+},
+"p033.jpg": "ok",
+"p034.jpg": {
+"top": 2,
+"bottom": 3
+},
+"p032.jpg": {
+"rot": -0.3,
+"left": -240,
+"right": -235,
+"top": 6,
+"bottom": -2
+},
+"p036.jpg": {
+"top": 4,
+"right": 2
+},
+"p038.jpg": {
+"bottom": 8
+},
+"p035.jpg": {
+"rot": -0.2,
+"left": 1,
+"right": 3,
+"top": 3,
+"bottom": 6
+},
+"p037.jpg": {
+"rot": -0.3,
+"left": 3,
+"right": -7,
+"top": 3,
+"bottom": 1
+},
+"p039.jpg": {
+"rot": -0.55,
+"left": 2,
+"right": -23,
+"top": 5,
+"bottom": 6
+},
+"p040.jpg": {
+"rot": -0.4,
+"left": -21,
+"right": 4,
+"top": 4,
+"bottom": 7
+},
+"p041.jpg": {
+"rot": 0.0,
+"left": 7,
+"right": -8,
+"top": 1,
+"bottom": 4
+},
+"p042.jpg": {
+"rot": 0.0,
+"left": 32,
+"right": 32,
+"top": 28,
+"bottom": 31
+}
+}

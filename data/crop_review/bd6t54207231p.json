@@ -1,0 +1,359 @@
+{
+"p001.jpg": {
+"rot": 0.25,
+"left": 21,
+"bottom": 3
+},
+"p002.jpg": {
+"rot": 0.5,
+"left": 40,
+"right": 47,
+"top": 28,
+"bottom": 30
+},
+"p003.jpg": {
+"left": -45,
+"top": 6,
+"bottom": 6
+},
+"p004.jpg": "ok",
+"p005.jpg": {
+"left": -18,
+"top": 4,
+"right": 4,
+"bottom": 4
+},
+"p006.jpg": {
+"right": -11
+},
+"p007.jpg": {
+"left": -15,
+"bottom": 5
+},
+"p008.jpg": {
+"rot": 0.35,
+"left": 39,
+"right": 36,
+"top": 27,
+"bottom": 28
+},
+"p009.jpg": {
+"left": -16,
+"top": 3,
+"right": 2,
+"bottom": 4
+},
+"p010.jpg": {
+"rot": 0.25,
+"left": 40,
+"right": 43,
+"top": 28,
+"bottom": 28
+},
+"p011.jpg": {
+"left": -14,
+"top": 2,
+"bottom": 5
+},
+"p012.jpg": {
+"left": 2,
+"right": -11,
+"bottom": 2
+},
+"p013.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p014.jpg": {
+"top": -36,
+"left": 3,
+"right": -13
+},
+"p015.jpg": {
+"left": -14,
+"top": 3,
+"bottom": 4
+},
+"p016.jpg": {
+"left": 1,
+"top": 2,
+"right": -8
+},
+"p017.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p018.jpg": {
+"left": 2,
+"top": 2,
+"right": -6
+},
+"p019.jpg": {
+"left": -13,
+"top": 3,
+"bottom": 4
+},
+"p020.jpg": {
+"rot": 0.25,
+"left": 40,
+"right": 43,
+"top": 27,
+"bottom": 28
+},
+"p021.jpg": {
+"left": -14,
+"top": 3,
+"bottom": 4
+},
+"p022.jpg": {
+"left": 3,
+"top": 2,
+"right": -10
+},
+"p023.jpg": {
+"left": -12,
+"top": 2,
+"bottom": 4
+},
+"p024.jpg": {
+"rot": 0.3,
+"left": 41,
+"right": 40,
+"top": 27,
+"bottom": 28
+},
+"p025.jpg": {
+"rot": -0.9,
+"left": 33,
+"right": 25,
+"top": 24,
+"bottom": 21
+},
+"p026.jpg": {
+"rot": 0.3,
+"left": 41,
+"right": 40,
+"top": 27,
+"bottom": 28
+},
+"p027.jpg": {
+"left": -12,
+"top": -33,
+"right": -48,
+"bottom": 3
+},
+"p028.jpg": {
+"left": 4,
+"top": 1
+},
+"p029.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 5
+},
+"p030.jpg": {
+"rot": 0.3,
+"left": 41,
+"right": 43,
+"top": 28,
+"bottom": 28
+},
+"p031.jpg": {
+"left": -14,
+"top": 3,
+"bottom": 4
+},
+"p032.jpg": {
+"rot": 0.3,
+"left": 41,
+"right": 40,
+"top": 27,
+"bottom": 28
+},
+"p033.jpg": {
+"left": -17,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p034.jpg": {
+"left": -43,
+"top": -35,
+"right": -57,
+"bottom": -50
+},
+"p035.jpg": {
+"left": -14,
+"top": 3,
+"bottom": 4
+},
+"p036.jpg": {
+"left": 3,
+"top": 1,
+"right": -9
+},
+"p037.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p038.jpg": {
+"left": 2,
+"top": 1,
+"right": -11
+},
+"p039.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p040.jpg": {
+"rot": 0.3,
+"left": 41,
+"right": 42,
+"top": 27,
+"bottom": 28
+},
+"p041.jpg": {
+"left": -28,
+"top": -35,
+"bottom": 3
+},
+"p042.jpg": {
+"top": -40,
+"left": 2,
+"right": 12
+},
+"p043.jpg": {
+"left": 18,
+"top": -43,
+"bottom": 3
+},
+"p044.jpg": {
+"left": 4,
+"top": 1,
+"right": -10
+},
+"p045.jpg": {
+"left": -14,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p046.jpg": {
+"left": 2,
+"top": 1,
+"right": -9
+},
+"p047.jpg": {
+"left": -15,
+"top": 3,
+"bottom": 4
+},
+"p048.jpg": {
+"left": 3,
+"top": 1,
+"right": -11,
+"bottom": 1
+},
+"p049.jpg": {
+"rot": -0.4,
+"left": 27,
+"right": 31,
+"top": 26,
+"bottom": 26
+},
+"p050.jpg": {
+"left": 2,
+"top": 2,
+"right": -11
+},
+"p051.jpg": {
+"left": -14,
+"top": 1,
+"bottom": 3
+},
+"p052.jpg": {
+"left": -47,
+"top": 1,
+"right": -4
+},
+"p053.jpg": {
+"rot": 0.15,
+"left": 27,
+"right": 33,
+"top": 27,
+"bottom": 28
+},
+"p054.jpg": {
+"left": -42,
+"top": -30,
+"right": -60,
+"bottom": -68
+},
+"p055.jpg": {
+"left": -17,
+"top": 3,
+"bottom": 4
+},
+"p056.jpg": {
+"left": 3,
+"top": 1
+},
+"p057.jpg": {
+"left": -18,
+"top": 3,
+"right": 1,
+"bottom": 4
+},
+"p058.jpg": {
+"rot": 0.16,
+"left": 3,
+"top": 1,
+"right": 10
+},
+"p059.jpg": {
+"rot": -0.23,
+"left": -45,
+"right": -54,
+"top": -36,
+"bottom": 3
+},
+"p060.jpg": {
+"rot": -0.2,
+"left": 36,
+"right": 46,
+"top": 27,
+"bottom": 28
+},
+"p061.jpg": {
+"rot": 0.35,
+"left": 28,
+"right": 36,
+"top": 27,
+"bottom": 30
+},
+"p062.jpg": {
+"top": -38,
+"left": 2,
+"right": -14
+},
+"p063.jpg": {
+"left": -14,
+"top": 3,
+"bottom": 3
+},
+"p064.jpg": {
+"left": 36,
+"right": 37,
+"top": 27,
+"bottom": 28
+}
+}

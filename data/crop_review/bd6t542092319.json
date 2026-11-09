@@ -1,0 +1,174 @@
+{
+ "p001.jpg": {
+  "rot": 0.35,
+  "left": 25,
+  "right": 39,
+  "top": 34,
+  "bottom": 37
+ },
+ "p002.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 2,
+  "right": -16
+ },
+ "p003.jpg": {
+  "left": -5,
+  "top": 3,
+  "bottom": 5,
+  "right": 2
+ },
+ "p004.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 3,
+  "right": -19
+ },
+ "p005.jpg": {
+  "left": -9,
+  "top": 3,
+  "right": 1,
+  "bottom": 3
+ },
+ "p006.jpg": {
+  "left": 33,
+  "top": 27,
+  "right": 36,
+  "bottom": 29
+ },
+ "p007.jpg": {
+  "left": 45,
+  "top": 41,
+  "right": 34,
+  "bottom": 38
+ },
+ "p008.jpg": {
+  "left": 34,
+  "top": 25,
+  "right": 35,
+  "bottom": 26
+ },
+ "p009.jpg": {
+  "rot": -0.7,
+  "left": 24,
+  "top": 4,
+  "bottom": 7,
+  "right": 1
+ },
+ "p010.jpg": {
+  "rot": 0.25,
+  "left": 34,
+  "top": 26,
+  "right": 38,
+  "bottom": 29
+ },
+ "p011.jpg": {
+  "rot": 0.45,
+  "left": 33,
+  "top": 38,
+  "right": 39,
+  "bottom": 34
+ },
+ "p012.jpg": {
+  "left": 4,
+  "top": 3,
+  "bottom": 2,
+  "right": -19
+ },
+ "p013.jpg": {
+  "left": -9,
+  "top": 4,
+  "bottom": 8,
+  "right": 1
+ },
+ "p014.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 2,
+  "right": -2
+ },
+ "p015.jpg": {
+  "rot": 0.4,
+  "left": 36,
+  "top": 37,
+  "right": 37,
+  "bottom": 35
+ },
+ "p016.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 3,
+  "right": -15
+ },
+ "p017.jpg": {
+  "left": -5,
+  "top": 3,
+  "right": 1,
+  "bottom": 1
+ },
+ "p018.jpg": {
+  "left": 3,
+  "top": 3,
+  "bottom": 3,
+  "right": -15
+ },
+ "p019.jpg": {
+  "left": -6,
+  "top": 5,
+  "right": 1
+ },
+ "p020.jpg": {
+  "left": 3,
+  "top": 4,
+  "bottom": 3,
+  "right": -14
+ },
+ "p021.jpg": {
+  "rot": 0.28,
+  "left": -3,
+  "top": 3,
+  "right": 2
+ },
+ "p022.jpg": {
+  "left": 2,
+  "top": 1,
+  "right": 7
+ },
+ "p023.jpg": {
+  "rot": 0.03,
+  "top": 4,
+  "bottom": 4,
+  "right": 2
+ },
+ "p024.jpg": {
+  "left": 2,
+  "top": 1,
+  "right": -4
+ },
+ "p025.jpg": {
+  "rot": -0.3,
+  "top": 6,
+  "bottom": 7,
+  "right": -2
+ },
+ "p026.jpg": {
+  "rot": 0.41,
+  "left": 2,
+  "top": 2,
+  "bottom": 2,
+  "right": -6
+ },
+ "p027.jpg": {
+  "rot": 0.2,
+  "left": 1,
+  "top": 5,
+  "bottom": 6,
+  "right": -1
+ },
+ "p028.jpg": {
+  "left": 1,
+  "top": 2,
+  "bottom": 2,
+  "right": -11
+ }
+}
