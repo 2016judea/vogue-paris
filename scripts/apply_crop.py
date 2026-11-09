@@ -20,8 +20,7 @@ os.makedirs(out, exist_ok=True)
 for f, ov in rev.items():
     img = cv2.imread(os.path.join(ROOT, 'mirror-hi', ark, f))
     H, W = img.shape[:2]
-    q = final_quad(auto.get(f, {}), ov)
-    C = {k: v * [W, H] for k, v in q.items()}
+    C, _ = final_quad(auto.get(f, {}), ov, W, H)
     wid = (np.linalg.norm(C['tr'] - C['tl']) + np.linalg.norm(C['br'] - C['bl'])) / 2
     hei = (np.linalg.norm(C['bl'] - C['tl']) + np.linalg.norm(C['br'] - C['tr'])) / 2
     iw, ih = int(round(wid)), int(round(hei))
