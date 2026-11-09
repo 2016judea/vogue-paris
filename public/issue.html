@@ -353,8 +353,9 @@
         var img = document.createElement('img');
         img.width = w; img.height = h;
         var u = it.base + '/vogue/' + it.ark;
-        img.src = u + '/' + it.tiers[0][0] + '/p' + p3(n) + '.webp';
-        img.srcset = it.tiers.map(function (t) { return u + '/' + t[0] + '/p' + p3(n) + '.webp ' + t[1] + 'w'; }).join(', ');
+        var q = it.v ? '?v=' + it.v : '';  // re-cut pages overwrite the same blob path; bust the year-long cache
+        img.src = u + '/' + it.tiers[0][0] + '/p' + p3(n) + '.webp' + q;
+        img.srcset = it.tiers.map(function (t) { return u + '/' + t[0] + '/p' + p3(n) + '.webp' + q + ' ' + t[1] + 'w'; }).join(', ');
         img.sizes = SIZES;
         img.alt = 'Vogue Paris, ' + it.label + ', page ' + (n - it.first + 1);
         img.decoding = 'async';

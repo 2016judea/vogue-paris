@@ -105,7 +105,7 @@ for (const it of seed) {
 const out = seed.filter(it => !it.exclude && !fs.existsSync(path.join(MIRROR, it.ark, 'BOUND'))).map(it => {
   const u = uploaded[it.ark];
   return u
-    ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4), tiers: u.tiers || [['w800', 800], ['w1600', 1600]], en: fs.existsSync(path.join(ROOT, 'public/text', it.ark + '.json')) }
+    ? { ...it, ready: true, base: u.base, first: u.first, last: u.last, ar: +(u.w / u.h).toFixed(4), tiers: u.tiers || [['w800', 800], ['w1600', 1600]], v: u.reviewed ? 1 : 0, en: fs.existsSync(path.join(ROOT, 'public/text', it.ark + '.json')) }
     : { ...it, ready: false };
 });
 fs.mkdirSync(path.join(ROOT, 'public/data'), { recursive: true });
