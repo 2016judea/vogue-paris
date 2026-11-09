@@ -75,9 +75,10 @@
   "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
   "first": 1,
   "last": 65,
-  "w": 2293,
-  "h": 3150,
+  "w": 2304,
+  "h": 3161,
   "hi": true,
+  "reviewed": true,
   "tiers": [
    [
     "w1200",
