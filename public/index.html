@@ -86,11 +86,11 @@ const ERAS={1920:"Lepape, Dryden, Plank",1925:"Art Deco",1929:"the crash",1934:"
 fetch('/data/issues.json').then(r=>r.json()).then(rows=>{
   const byYear={};rows.forEach(r=>(byYear[r.year]??=[]).push(r));
   const main=document.getElementById('years');
-  for(const y of Object.keys(byYear).map(Number)){
+  for(const y of Object.keys(byYear).map(Number).sort((a,b)=>b-a)){  // newest first
     const n=byYear[y].length,s=document.createElement('section');s.className='year';s.id='y'+y;
     s.innerHTML=`<div class="yh"><h2>${y}</h2><small>${n} issue${n>1?'s':''}</small>${ERAS[y]?`<span class="era">${ERAS[y]}</span>`:''}</div><div class="grid"></div>`;
     const g=s.querySelector('.grid');
-    for(const d of byYear[y]){
+    for(const d of [...byYear[y]].reverse()){
       const f=document.createElement('figure');
       f.innerHTML=`<a class="frame" href="/issue/${d.ark}" aria-label="Read ${d.label}"><img loading="lazy" src="/covers/${d.ark}.webp" alt="Vogue Paris cover, ${d.label}"></a><figcaption><span>${d.label}</span></figcaption>`;
       g.appendChild(f);
