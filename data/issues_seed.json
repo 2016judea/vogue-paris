@@ -601,7 +601,8 @@
 "date": "1925-07-01",
 "label": "01 juillet 1925",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k6544188f",
@@ -649,7 +650,8 @@
 "date": "1926-01-01",
 "label": "01 janvier 1926",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k65388259",
@@ -697,7 +699,8 @@
 "date": "1926-07-01",
 "label": "01 juillet 1926",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k6538696p",
@@ -865,7 +868,8 @@
 "date": "1930-01-01",
 "label": "01 janvier 1930",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k65398565",
@@ -1188,7 +1192,8 @@
 "date": "1936-01-01",
 "label": "01 janvier 1936",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k65398832",
@@ -1396,7 +1401,8 @@
 "date": "1945-01-01",
 "label": "01 janvier 1945",
 "start": 9,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54209225k",
@@ -1428,7 +1434,8 @@
 "date": "1947-01-01",
 "label": "01 janvier 1947",
 "start": 9,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54207762z",
@@ -1452,7 +1459,8 @@
 "date": "1948-07-01",
 "label": "01 juillet 1948",
 "start": 7,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t542077085",
@@ -1500,7 +1508,8 @@
 "date": "1949-07-01",
 "label": "01 juillet 1949",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54207204s",
@@ -1572,7 +1581,8 @@
 "date": "1950-07-01",
 "label": "01 juillet 1950",
 "start": 7,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54208490j",
@@ -1612,7 +1622,8 @@
 "date": "1951-01-01",
 "label": "1951",
 "start": 7,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bpt6k1206311b",
@@ -1660,7 +1671,8 @@
 "date": "1951-07-01",
 "label": "01 juillet 1951",
 "start": 9,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54207193f",
@@ -1700,7 +1712,8 @@
 "date": "1952-02-01",
 "label": "01 février 1952",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t542078073",
@@ -1724,7 +1737,8 @@
 "date": "1952-07-01",
 "label": "01 juillet 1952",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54208703d",
@@ -1764,7 +1778,8 @@
 "date": "1953-02-01",
 "label": "01 février 1953",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54207198h",
@@ -1772,7 +1787,8 @@
 "date": "1953-06-01",
 "label": "01 juin 1953",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t54207199x",
@@ -1828,7 +1844,8 @@
 "date": "1954-06-01",
 "label": "01 juin 1954",
 "start": 11,
-"bound": true
+"bound": true,
+"exclude": "bound volume (dropped at Aidan's request, 2026-11-08)"
 },
 {
 "ark": "bd6t542094540",

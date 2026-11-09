@@ -1024,5 +1024,23 @@
     2400
    ]
   ]
+ },
+ "bpt6k6539774r": {
+  "base": "https://97oa3evhll0gf0xo.public.blob.vercel-storage.com",
+  "first": 1,
+  "last": 84,
+  "w": 2390,
+  "h": 3187,
+  "hi": true,
+  "tiers": [
+   [
+    "w1200",
+    1200
+   ],
+   [
+    "w2400",
+    2400
+   ]
+  ]
  }
 }
