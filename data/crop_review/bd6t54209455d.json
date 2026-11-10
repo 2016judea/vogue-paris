@@ -488,5 +488,28 @@
   "right": 8,
   "bottom": 1,
   "rot": 0.0
+ },
+ "p077.jpg": {
+  "top": -1,
+  "right": 2,
+  "bottom": 1
+ },
+ "p078.jpg": {
+  "top": 3,
+  "right": 3,
+  "bottom": 2,
+  "rot": 0.35
+ },
+ "p079.jpg": {
+  "left": 36,
+  "top": 39,
+  "right": 30,
+  "bottom": 31
+ },
+ "p080.jpg": {
+  "left": 12,
+  "top": 1,
+  "right": 2,
+  "bottom": 2
  }
 }

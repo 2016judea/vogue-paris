@@ -143,5 +143,81 @@
 "top": 7,
 "bottom": -5,
 "rot": 0.39
+},
+"p025.jpg": {
+"top": 3,
+"left": 1
+},
+"p026.jpg": {
+"left": 42,
+"right": 43,
+"top": 34,
+"bottom": 28,
+"rot": 0.22
+},
+"p027.jpg": {
+"top": 4,
+"right": -14,
+"left": 1
+},
+"p028.jpg": {
+"left": -20,
+"top": 9,
+"bottom": 2
+},
+"p029.jpg": {
+"left": -3,
+"top": -2
+},
+"p030.jpg": {
+"right": -5,
+"top": 2
+},
+"p031.jpg": {
+"top": 5,
+"bottom": 2,
+"right": 2
+},
+"p032.jpg": {
+"left": -53,
+"right": -17,
+"top": 6,
+"bottom": 4,
+"rot": 0.4
+},
+"p033.jpg": {
+"top": 3,
+"left": -1
+},
+"p034.jpg": {
+"top": 2,
+"right": 2,
+"left": -3
+},
+"p035.jpg": {
+"left": 33,
+"right": 40,
+"top": 28,
+"bottom": 30,
+"rot": 0.0
+},
+"p036.jpg": {
+"left": -27,
+"right": -37,
+"top": -34,
+"bottom": 4,
+"rot": 0.16
+},
+"p037.jpg": {
+"left": -10,
+"top": -31,
+"right": 3
+},
+"p038.jpg": {
+"left": 40,
+"right": 33,
+"top": 36,
+"bottom": 28,
+"rot": 0.0
 }
 }

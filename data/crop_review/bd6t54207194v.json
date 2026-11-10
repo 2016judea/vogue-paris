@@ -52,5 +52,46 @@
 "top": 4,
 "right": -12,
 "bottom": 3
+},
+"p009.jpg": {
+"rot": -0.38,
+"left": -18,
+"right": 8,
+"top": -1,
+"bottom": 8
+},
+"p010.jpg": {
+"rot": 0.3,
+"left": 0,
+"right": 21,
+"top": 1,
+"bottom": 1
+},
+"p011.jpg": {
+"rot": 0.0,
+"left": 51,
+"right": 40,
+"top": 33,
+"bottom": 30
+},
+"p012.jpg": {
+"rot": -0.22,
+"left": 33,
+"right": 42,
+"top": 25,
+"bottom": 27
+},
+"p013.jpg": {
+"rot": -0.4,
+"left": 34,
+"right": 7,
+"top": -2,
+"bottom": 1
+},
+"p014.jpg": {
+"left": 4,
+"top": -1,
+"right": -1,
+"bottom": 4
 }
 }

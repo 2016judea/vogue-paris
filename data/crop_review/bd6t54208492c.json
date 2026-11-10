@@ -1,0 +1,30 @@
+{
+"p001.jpg": {
+"rot": 0.19,
+"left": 10,
+"right": 1,
+"top": 1,
+"bottom": 1
+},
+"p002.jpg": {
+"rot": 0.14,
+"left": 2,
+"right": 0,
+"top": 2,
+"bottom": -1
+},
+"p003.jpg": {
+"rot": 0.37,
+"left": 35,
+"right": 37,
+"top": 32,
+"bottom": 28
+},
+"p004.jpg": {
+"rot": 0.0,
+"left": 35,
+"right": 22,
+"top": 27,
+"bottom": 28
+}
+}
