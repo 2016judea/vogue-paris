@@ -6,7 +6,7 @@
   "w": 2270,
   "h": 3197,
   "hi": true,
-  "reviewed": true,
+  "reviewed": false,
   "tiers": [
    [
     "w1200",
@@ -79,7 +79,7 @@
   "w": 2304,
   "h": 3161,
   "hi": true,
-  "reviewed": true,
+  "reviewed": false,
   "tiers": [
    [
     "w1200",
