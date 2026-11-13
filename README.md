@@ -8,6 +8,7 @@ Every issue of French Vogue that the BnF has digitised on Gallica (231 issues, 1
 
 - `public/index.html` is the cover wall (ported from the "Vogue Paris Covers" artifact). Tap a cover to read.
 - `public/issue.html` is the reader, served at `/issue/<ark>`.
+- `public/board.html` (`/board`) puts every cover on one grid; tap one for the full-res JPEG (`scripts/covers_full.mjs`, Blob `vogue/<ark>/cover.jpg`) with a Copy button for pasting into Substack.
 - `public/data/issues.json` lists every issue and whether its pages are uploaded.
 - Page scans live in Vercel Blob (`vogue-paris-pages`), two widths per page: `w800` and `w1600`.
 
